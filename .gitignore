@@ -14,3 +14,8 @@ pg-data/
 # Generated invoices (rebuild with python -m generator.generate)
 data/invoices/
 data/demo_inbox/
+
+# Site previews (rebuild with python site/build_site.py)
+site/public/invoices/
+.vercel/
+site/public/.vercel/

@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Invoice Match Agent</title>
+<meta name="description" content="An AI accounts-payable agent for Odoo that reads supplier invoices and 3-way matches them against purchase orders and deliveries. Interactive evaluation results.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='6' y='3' width='20' height='26' rx='3' fill='%232a78d6'/%3E%3Cpath d='M11 11h10M11 16h10M11 21h6' stroke='white' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand">Invoice Match Agent <small>evaluation results</small></div>
+    <button class="theme-btn" id="themeBtn" type="button" aria-label="Change color theme">Theme: auto</button>
+  </header>
+
+  <section class="hero" aria-labelledby="h-hero">
+    <p class="eyebrow">AI agent · Odoo 19 ERP · Gemini</p>
+    <h1 id="h-hero">An AI agent that catches suppliers overcharging, before anyone pays.</h1>
+    <p class="lede">It reads supplier invoices (PDFs, office scans, phone photos), checks every line against what was ordered and what
+      actually arrived, explains each problem, and files a draft bill in Odoo for a person to approve.</p>
+    <div class="hero-grid">
+      <div class="hero-figure">
+        <div>
+          <div class="value" id="heroValue">–</div>
+          <div class="label" id="heroLabel">problem invoices sent to review on the held-out test</div>
+        </div>
+        <div class="status good" id="heroStatus"><span class="dot"></span><span>No bad invoice let through</span></div>
+      </div>
+      <div class="tiles" id="tiles"></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-how">
+    <h2 id="h-how">How it works</h2>
+    <p class="section-sub">AI does the reading. Plain code does every money check. A person makes the final call.</p>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h3>Read</h3><p>Gemini turns the invoice (any layout, even a tilted photo) into structured data: supplier, PO, lines, totals.</p><div class="who">AI</div></div>
+      <div class="step"><div class="n">2</div><h3>Match</h3><p>Finds the supplier and purchase order in Odoo and pairs each line with a product, even when names differ.</p><div class="who">Code</div></div>
+      <div class="step"><div class="n">3</div><h3>Check</h3><p>Billed vs. received quantity, invoice vs. PO price, unknown items, math and 12% VAT, duplicates, undelivered goods.</p><div class="who">Code</div></div>
+      <div class="step"><div class="n">4</div><h3>File</h3><p>Creates a draft vendor bill with the invoice attached and a plain-language report. Problems get a review To-Do. Nothing is paid.</p><div class="who">Code → Person</div></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-results">
+    <h2 id="h-results">Results</h2>
+    <p class="section-sub">100 synthetic invoices with planted billing errors and answer keys: 60 to tune the system, 40 held out and scored once at the end.
+      Every number here comes from the saved evaluation runs.</p>
+    <div class="grid-2">
+      <div class="card" id="cardReading">
+        <div class="card-head">
+          <div><h3>Invoices read with every field correct</h3><p>By form, across the three extraction runs</p></div>
+          <button class="toggle" type="button" data-table="reading">Show table</button>
+        </div>
+        <div class="legend" id="legReading"></div>
+        <div class="chart" id="chartReading" role="img" aria-label="Grouped bar chart of extraction accuracy by invoice form"></div>
+        <div class="table-wrap" id="tableReading" hidden></div>
+        <p class="callout" id="calloutReading"></p>
+      </div>
+      <div class="card" id="cardMatching">
+        <div class="card-head">
+          <div><h3>Checking and routing</h3><p>Same checks, three conditions</p></div>
+          <button class="toggle" type="button" data-table="matching">Show table</button>
+        </div>
+        <div class="legend" id="legMatching"></div>
+        <div class="chart" id="chartMatching" role="img" aria-label="Dot plot of matching metrics for three evaluation runs"></div>
+        <div class="table-wrap" id="tableMatching" hidden></div>
+        <p class="callout">“Perfect data” feeds the checker the answer keys, so it tests the logic alone. Every gap in the other two traces to a Google API timeout, and each one failed safe.</p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-every">
+    <h2 id="h-every">Every invoice</h2>
+    <p class="section-sub">Pick a set, then open any invoice to see what was planted in it and what the agent said.</p>
+    <div class="filters" role="group" aria-label="Filters">
+      <div class="seg" id="segSet" role="group" aria-label="Test set">
+        <button type="button" data-set="holdout" aria-pressed="true">Held-out (40)</button>
+        <button type="button" data-set="tune" aria-pressed="false">Tuning (60)</button>
+        <button type="button" data-set="all" aria-pressed="false">Both</button>
+      </div>
+      <select class="filter" id="fOutcome" aria-label="Agent outcome">
+        <option value="">Any outcome</option>
+        <option value="correct">Agent fully correct</option>
+        <option value="wrong">Agent missed something</option>
+      </select>
+      <select class="filter" id="fRender" aria-label="Invoice form">
+        <option value="">Any form</option>
+        <option value="pdf">Clean PDF</option>
+        <option value="scan">Office scan</option>
+        <option value="photo">Phone photo</option>
+      </select>
+      <select class="filter" id="fScenario" aria-label="Planted problem"><option value="">Any planted problem</option></select>
+      <span class="count" id="count"></span>
+    </div>
+    <div class="grid-2" style="margin-bottom:16px">
+      <div class="card">
+        <div class="card-head">
+          <div><h3>Planted errors caught, by type</h3><p id="typesSub"></p></div>
+          <button class="toggle" type="button" data-table="types">Show table</button>
+        </div>
+        <div class="legend"><span><i style="background:var(--series-1)"></i>Caught</span><span><i style="background:var(--track)"></i>Missed</span></div>
+        <div class="chart" id="chartTypes" role="img" aria-label="Bar chart of planted errors caught by type"></div>
+        <div class="table-wrap" id="tableTypes" hidden></div>
+      </div>
+      <div class="card">
+        <div class="card-head">
+          <div><h3>Time to read each invoice</h3><p id="latSub"></p></div>
+          <button class="toggle" type="button" data-table="latency">Show table</button>
+        </div>
+        <div class="chart" id="chartLatency" role="img" aria-label="Histogram of seconds per invoice"></div>
+        <div class="table-wrap" id="tableLatency" hidden></div>
+      </div>
+    </div>
+    <div class="inv-grid" id="invGrid"></div>
+  </section>
+
+  <section aria-labelledby="h-fixes">
+    <h2 id="h-fixes">What broke, and what changed</h2>
+    <p class="section-sub">The tuning set exists to find these. Each fix was measured before and after.</p>
+    <div class="fixes" id="fixes"></div>
+  </section>
+
+  <footer>
+    Lakan Distribution Inc. is a fictional company; all invoices are synthetic and generated from a self-hosted Odoo 19 sandbox.
+    Stack: Python, Gemini (Flash-Lite, Flash fallback), Odoo 19 JSON-2 API, Docker, PostgreSQL. 40 held-out invoices is a small set, so treat the rates as strong signals, not guarantees.
+  </footer>
+</div>
+
+<div class="tip" id="tip" role="status" aria-live="polite"></div>
+<dialog id="dlg" aria-labelledby="dlgTitle"><div class="dlg"><div class="img"><img id="dlgImg" alt=""></div><div class="info" id="dlgInfo"></div></div></dialog>
+<script src="app.js"></script>
+</body>
+</html>

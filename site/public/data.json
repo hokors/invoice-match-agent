@@ -1,0 +1,2736 @@
+{
+ "extraction": [
+  {
+   "label": "Prompt v1",
+   "set": "tune",
+   "All": [
+    50,
+    60
+   ],
+   "pdf": [
+    23,
+    27
+   ],
+   "scan": [
+    18,
+    23
+   ],
+   "photo": [
+    9,
+    10
+   ]
+  },
+  {
+   "label": "Prompt v2",
+   "set": "tune",
+   "All": [
+    57,
+    60
+   ],
+   "pdf": [
+    27,
+    27
+   ],
+   "scan": [
+    21,
+    23
+   ],
+   "photo": [
+    9,
+    10
+   ]
+  },
+  {
+   "label": "Held-out",
+   "set": "holdout",
+   "All": [
+    39,
+    40
+   ],
+   "pdf": [
+    18,
+    19
+   ],
+   "scan": [
+    11,
+    11
+   ],
+   "photo": [
+    10,
+    10
+   ]
+  }
+ ],
+ "matching": [
+  {
+   "label": "First version",
+   "set": "tune",
+   "data": "perfect",
+   "metrics": {
+    "recall": [
+     43,
+     50
+    ],
+    "precision": [
+     43,
+     58
+    ],
+    "clean": [
+     18,
+     18
+    ],
+    "review": [
+     42,
+     42
+    ],
+    "po": [
+     53,
+     60
+    ],
+    "status": [
+     60,
+     60
+    ]
+   },
+   "types": {
+    "over_billed_qty": [
+     9,
+     9
+    ],
+    "price_mismatch": [
+     13,
+     13
+    ],
+    "unknown_item": [
+     0,
+     7
+    ],
+    "missing_po_ref": [
+     5,
+     5
+    ],
+    "wrong_po_ref": [
+     3,
+     3
+    ],
+    "math_error": [
+     5,
+     5
+    ],
+    "not_received": [
+     5,
+     5
+    ],
+    "duplicate_invoice": [
+     3,
+     3
+    ]
+   }
+  },
+  {
+   "label": "After the PO fix",
+   "set": "tune",
+   "data": "perfect",
+   "metrics": {
+    "recall": [
+     50,
+     50
+    ],
+    "precision": [
+     50,
+     50
+    ],
+    "clean": [
+     18,
+     18
+    ],
+    "review": [
+     42,
+     42
+    ],
+    "po": [
+     60,
+     60
+    ],
+    "status": [
+     60,
+     60
+    ]
+   },
+   "types": {
+    "over_billed_qty": [
+     9,
+     9
+    ],
+    "price_mismatch": [
+     13,
+     13
+    ],
+    "unknown_item": [
+     7,
+     7
+    ],
+    "missing_po_ref": [
+     5,
+     5
+    ],
+    "wrong_po_ref": [
+     3,
+     3
+    ],
+    "math_error": [
+     5,
+     5
+    ],
+    "not_received": [
+     5,
+     5
+    ],
+    "duplicate_invoice": [
+     3,
+     3
+    ]
+   }
+  },
+  {
+   "label": "Tuning, full pipeline",
+   "set": "tune",
+   "data": "real",
+   "metrics": {
+    "recall": [
+     48,
+     50
+    ],
+    "precision": [
+     48,
+     50
+    ],
+    "clean": [
+     17,
+     18
+    ],
+    "review": [
+     42,
+     42
+    ],
+    "po": [
+     58,
+     60
+    ],
+    "status": [
+     59,
+     60
+    ]
+   },
+   "types": {
+    "over_billed_qty": [
+     9,
+     9
+    ],
+    "price_mismatch": [
+     13,
+     13
+    ],
+    "unknown_item": [
+     7,
+     7
+    ],
+    "missing_po_ref": [
+     5,
+     5
+    ],
+    "wrong_po_ref": [
+     3,
+     3
+    ],
+    "math_error": [
+     5,
+     5
+    ],
+    "not_received": [
+     4,
+     5
+    ],
+    "duplicate_invoice": [
+     2,
+     3
+    ]
+   }
+  },
+  {
+   "label": "Held-out, full pipeline",
+   "set": "holdout",
+   "data": "real",
+   "metrics": {
+    "recall": [
+     32,
+     32
+    ],
+    "precision": [
+     32,
+     33
+    ],
+    "clean": [
+     11,
+     12
+    ],
+    "review": [
+     28,
+     28
+    ],
+    "po": [
+     39,
+     40
+    ],
+    "status": [
+     39,
+     40
+    ]
+   },
+   "types": {
+    "over_billed_qty": [
+     7,
+     7
+    ],
+    "price_mismatch": [
+     7,
+     7
+    ],
+    "unknown_item": [
+     4,
+     4
+    ],
+    "missing_po_ref": [
+     4,
+     4
+    ],
+    "wrong_po_ref": [
+     2,
+     2
+    ],
+    "math_error": [
+     3,
+     3
+    ],
+    "not_received": [
+     3,
+     3
+    ],
+    "duplicate_invoice": [
+     2,
+     2
+    ]
+   }
+  }
+ ],
+ "invoices": [
+  {
+   "id": "tune-001",
+   "set": "tune",
+   "render": "scan",
+   "layout": "statement",
+   "scenario": "clean",
+   "supplier": "Bulacan Canned Goods Distributors",
+   "number": "SI-2026-02100",
+   "total": 116121.6,
+   "true_po": "P00026",
+   "matched_po": "P00026",
+   "expected": "ready",
+   "got": "ready",
+   "correct": true,
+   "planted": [],
+   "agent": [],
+   "read_ok": true,
+   "seconds": 1.98,
+   "api_error": false,
+   "preview": "invoices/tune-001.jpg"
+  },
+  {
+   "id": "tune-002",
+   "set": "tune",
+   "render": "scan",
+   "layout": "compact",
+   "scenario": "math_error",
+   "supplier": "Laguna Dairy & Bakery Supply",
+   "number": "INV/2026/2076",
+   "total": 153133.6,
+   "true_po": "P00082",
+   "matched_po": "P00082",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "Math error in the total: printed ₱153,133.60, should be ₱152,633.60"
+   ],
+   "agent": [
+    "Subtotal + VAT = ₱152,633.60, invoice total says ₱153,133.60."
+   ],
+   "read_ok": true,
+   "seconds": 2.55,
+   "api_error": false,
+   "preview": "invoices/tune-002.jpg"
+  },
+  {
+   "id": "tune-003",
+   "set": "tune",
+   "render": "scan",
+   "layout": "classic",
+   "scenario": "clean",
+   "supplier": "Pangasinan Snacks Corp.",
+   "number": "SI-2026-03714",
+   "total": 25536.0,
+   "true_po": "P00080",
+   "matched_po": "P00080",
+   "expected": "ready",
+   "got": "ready",
+   "correct": true,
+   "planted": [],
+   "agent": [],
+   "read_ok": true,
+   "seconds": 2.3,
+   "api_error": false,
+   "preview": "invoices/tune-003.jpg"
+  },
+  {
+   "id": "tune-004",
+   "set": "tune",
+   "render": "pdf",
+   "layout": "compact",
+   "scenario": "clean",
+   "supplier": "Tarlac Household Care Supply",
+   "number": "003201",
+   "total": 58598.4,
+   "true_po": "P00059",
+   "matched_po": "P00059",
+   "expected": "ready",
+   "got": "ready",
+   "correct": true,
+   "planted": [],
+   "agent": [],
+   "read_ok": true,
+   "seconds": 2.44,
+   "api_error": false,
+   "preview": "invoices/tune-004.jpg"
+  },
+  {
+   "id": "tune-005",
+   "set": "tune",
+   "render": "pdf",
+   "layout": "statement",
+   "scenario": "missing_po_ref",
+   "supplier": "Batangas Coffee & Creamer Trading",
+   "number": "BCC-3335",
+   "total": 50383.2,
+   "true_po": "P00013",
+   "matched_po": "P00013",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "PO reference left off the invoice"
+   ],
+   "agent": [
+    "No PO reference on the invoice. Best match by items and quantities: P00013."
+   ],
+   "read_ok": true,
+   "seconds": 2.62,
+   "api_error": false,
+   "preview": "invoices/tune-005.jpg"
+  },
+  {
+   "id": "tune-006",
+   "set": "tune",
+   "render": "photo",
+   "layout": "statement",
+   "scenario": "clean",
+   "supplier": "Bulacan Canned Goods Distributors",
+   "number": "SI-2026-02107",
+   "total": 112089.6,
+   "true_po": "P00032",
+   "matched_po": "P00032",
+   "expected": "ready",
+   "got": "ready",
+   "correct": true,
+   "planted": [],
+   "agent": [],
+   "read_ok": true,
+   "seconds": 2.19,
+   "api_error": false,
+   "preview": "invoices/tune-006.jpg"
+  },
+  {
+   "id": "tune-007",
+   "set": "tune",
+   "render": "photo",
+   "layout": "statement",
+   "scenario": "unknown_item",
+   "supplier": "Batangas Coffee & Creamer Trading",
+   "number": "BCC-3371",
+   "total": 78859.2,
+   "true_po": "P00062",
+   "matched_po": "P00062",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "Added an item not on the PO: Coffee Mix Original 20g x30"
+   ],
+   "agent": [
+    "'Coffee Mix Original 20g x30' is billed but isn't on P00062."
+   ],
+   "read_ok": true,
+   "seconds": 2.01,
+   "api_error": false,
+   "preview": "invoices/tune-007.jpg"
+  },
+  {
+   "id": "tune-008",
+   "set": "tune",
+   "render": "photo",
+   "layout": "statement",
+   "scenario": "not_received",
+   "supplier": "Bulacan Canned Goods Distributors",
+   "number": "SI-2026-02124",
+   "total": 49996.8,
+   "true_po": "P00022",
+   "matched_po": null,
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": false,
+   "planted": [
+    "Billed before anything on P00022 was delivered"
+   ],
+   "agent": [
+    "The invoice couldn't be read. A person needs to enter it."
+   ],
+   "read_ok": false,
+   "seconds": 0.0,
+   "api_error": true,
+   "preview": "invoices/tune-008.jpg"
+  },
+  {
+   "id": "tune-009",
+   "set": "tune",
+   "render": "scan",
+   "layout": "compact",
+   "scenario": "over_billed_qty",
+   "supplier": "Gitnang Luzon Noodle Supply Inc.",
+   "number": "GLN-2394",
+   "total": 161235.2,
+   "true_po": "P00047",
+   "matched_po": "P00047",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "Over-billed NDL-002: billed 25, received 15"
+   ],
+   "agent": [
+    "Pancit Canton Chilimansi 60g (box of 72): billed 25, only 15 received."
+   ],
+   "read_ok": true,
+   "seconds": 2.76,
+   "api_error": false,
+   "preview": "invoices/tune-009.jpg"
+  },
+  {
+   "id": "tune-010",
+   "set": "tune",
+   "render": "scan",
+   "layout": "classic",
+   "scenario": "over_billed_qty",
+   "supplier": "Malolos Rice & Grains Co.",
+   "number": "INV/2026/2408",
+   "total": 85512.0,
+   "true_po": "P00086",
+   "matched_po": "P00086",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "Over-billed GRN-001: billed 30, received 24"
+   ],
+   "agent": [
+    "Well-milled Rice 25kg (sack): billed 30, only 24 received."
+   ],
+   "read_ok": true,
+   "seconds": 2.57,
+   "api_error": false,
+   "preview": "invoices/tune-010.jpg"
+  },
+  {
+   "id": "tune-011",
+   "set": "tune",
+   "render": "pdf",
+   "layout": "classic",
+   "scenario": "wrong_po_ref",
+   "supplier": "Pangasinan Snacks Corp.",
+   "number": "SI-2026-03718",
+   "total": 25390.4,
+   "true_po": "P00091",
+   "matched_po": "P00091",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "Wrong PO cited: P00072 (really P00091)"
+   ],
+   "agent": [
+    "Invoice cites PO P00072, but its items and quantities match P00091."
+   ],
+   "read_ok": true,
+   "seconds": 1.61,
+   "api_error": false,
+   "preview": "invoices/tune-011.jpg"
+  },
+  {
+   "id": "tune-012",
+   "set": "tune",
+   "render": "scan",
+   "layout": "classic",
+   "scenario": "over_billed_qty",
+   "supplier": "Malolos Rice & Grains Co.",
+   "number": "INV/2026/2434",
+   "total": 69300.0,
+   "true_po": "P00103",
+   "matched_po": "P00103",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "Over-billed GRN-004: billed 25, received 12"
+   ],
+   "agent": [
+    "Brown Sugar 1kg (bale of 20): billed 25, only 12 received."
+   ],
+   "read_ok": true,
+   "seconds": 2.5,
+   "api_error": false,
+   "preview": "invoices/tune-012.jpg"
+  },
+  {
+   "id": "tune-013",
+   "set": "tune",
+   "render": "photo",
+   "layout": "compact",
+   "scenario": "two errors",
+   "supplier": "Tarlac Household Care Supply",
+   "number": "003237",
+   "total": 89779.2,
+   "true_po": "P00034",
+   "matched_po": "P00034",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "Price of HHC-001 raised: ₱777.60 vs PO ₱648.00",
+    "Added an item not on the PO: Dishwash Liquid 250ml x24"
+   ],
+   "agent": [
+    "Powder Detergent 66g (pack of 72): billed ₱777.60/unit, PO price is ₱648.00.",
+    "'Dishwash Liquid 250ml x24' is billed but isn't on P00034."
+   ],
+   "read_ok": true,
+   "seconds": 2.36,
+   "api_error": false,
+   "preview": "invoices/tune-013.jpg"
+  },
+  {
+   "id": "tune-014",
+   "set": "tune",
+   "render": "pdf",
+   "layout": "compact",
+   "scenario": "clean",
+   "supplier": "Tarlac Household Care Supply",
+   "number": "003245",
+   "total": 59404.8,
+   "true_po": "P00046",
+   "matched_po": "P00046",
+   "expected": "ready",
+   "got": "ready",
+   "correct": true,
+   "planted": [],
+   "agent": [],
+   "read_ok": true,
+   "seconds": 1.67,
+   "api_error": false,
+   "preview": "invoices/tune-014.jpg"
+  },
+  {
+   "id": "tune-015",
+   "set": "tune",
+   "render": "pdf",
+   "layout": "statement",
+   "scenario": "two errors",
+   "supplier": "Batangas Coffee & Creamer Trading",
+   "number": "BCC-3384",
+   "total": 40830.72,
+   "true_po": "P00097",
+   "matched_po": "P00097",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "Added an item not on the PO: Classic Instant Coffee 50g x24",
+    "Price of COF-004 raised: ₱276.00 vs PO ₱240.00"
+   ],
+   "agent": [
+    "Chocolate Drink 30g (pack of 30): billed ₱276.00/unit, PO price is ₱240.00.",
+    "'Classic Instant Coffee 50g x24' is billed but isn't on P00097."
+   ],
+   "read_ok": true,
+   "seconds": 2.36,
+   "api_error": false,
+   "preview": "invoices/tune-015.jpg"
+  },
+  {
+   "id": "tune-016",
+   "set": "tune",
+   "render": "photo",
+   "layout": "classic",
+   "scenario": "price_mismatch",
+   "supplier": "Pampanga Beverage Trading Corp.",
+   "number": "002739",
+   "total": 18166.4,
+   "true_po": "P00069",
+   "matched_po": "P00069",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "Price of BEV-004 raised: ₱621.00 vs PO ₱540.00"
+   ],
+   "agent": [
+    "Iced Tea Lemon 1L (case of 12): billed ₱621.00/unit, PO price is ₱540.00."
+   ],
+   "read_ok": true,
+   "seconds": 2.28,
+   "api_error": false,
+   "preview": "invoices/tune-016.jpg"
+  },
+  {
+   "id": "tune-017",
+   "set": "tune",
+   "render": "pdf",
+   "layout": "classic",
+   "scenario": "not_received",
+   "supplier": "Malolos Rice & Grains Co.",
+   "number": "INV/2026/2446",
+   "total": 51520.0,
+   "true_po": "P00008",
+   "matched_po": "P00008",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "Billed before anything on P00008 was delivered"
+   ],
+   "agent": [
+    "Nothing on P00008 has been received yet; don't pay before the goods arrive."
+   ],
+   "read_ok": true,
+   "seconds": 2.22,
+   "api_error": false,
+   "preview": "invoices/tune-017.jpg"
+  },
+  {
+   "id": "tune-018",
+   "set": "tune",
+   "render": "pdf",
+   "layout": "classic",
+   "scenario": "price_mismatch",
+   "supplier": "Pangasinan Snacks Corp.",
+   "number": "SI-2026-03742",
+   "total": 39177.6,
+   "true_po": "P00031",
+   "matched_po": "P00031",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "Price of SNK-004 raised: ₱630.00 vs PO ₱600.00"
+   ],
+   "agent": [
+    "Chicharon Spicy 50g (case of 24): billed ₱630.00/unit, PO price is ₱600.00."
+   ],
+   "read_ok": true,
+   "seconds": 2.07,
+   "api_error": false,
+   "preview": "invoices/tune-018.jpg"
+  },
+  {
+   "id": "tune-019",
+   "set": "tune",
+   "render": "scan",
+   "layout": "compact",
+   "scenario": "clean",
+   "supplier": "Laguna Dairy & Bakery Supply",
+   "number": "INV/2026/2094",
+   "total": 235110.4,
+   "true_po": "P00018",
+   "matched_po": "P00018",
+   "expected": "ready",
+   "got": "ready",
+   "correct": true,
+   "planted": [],
+   "agent": [],
+   "read_ok": true,
+   "seconds": 2.21,
+   "api_error": false,
+   "preview": "invoices/tune-019.jpg"
+  },
+  {
+   "id": "tune-020",
+   "set": "tune",
+   "render": "scan",
+   "layout": "classic",
+   "scenario": "over_billed_qty",
+   "supplier": "Malolos Rice & Grains Co.",
+   "number": "INV/2026/2450",
+   "total": 58828.0,
+   "true_po": "P00073",
+   "matched_po": "P00073",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "Over-billed GRN-002: billed 25, received 22"
+   ],
+   "agent": [
+    "Premium Jasmine Rice 25kg (sack): billed 25, only 22 received."
+   ],
+   "read_ok": true,
+   "seconds": 2.67,
+   "api_error": false,
+   "preview": "invoices/tune-020.jpg"
+  },
+  {
+   "id": "tune-021",
+   "set": "tune",
+   "render": "pdf",
+   "layout": "compact",
+   "scenario": "not_received",
+   "supplier": "Gitnang Luzon Noodle Supply Inc.",
+   "number": "GLN-2415",
+   "total": 101528.0,
+   "true_po": "P00063",
+   "matched_po": "P00063",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "Billed before anything on P00063 was delivered"
+   ],
+   "agent": [
+    "Nothing on P00063 has been received yet; don't pay before the goods arrive."
+   ],
+   "read_ok": true,
+   "seconds": 2.08,
+   "api_error": false,
+   "preview": "invoices/tune-021.jpg"
+  },
+  {
+   "id": "tune-022",
+   "set": "tune",
+   "render": "pdf",
+   "layout": "statement",
+   "scenario": "not_received",
+   "supplier": "Bulacan Canned Goods Distributors",
+   "number": "SI-2026-02136",
+   "total": 125619.2,
+   "true_po": "P00029",
+   "matched_po": "P00029",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "Billed before anything on P00029 was delivered"
+   ],
+   "agent": [
+    "Nothing on P00029 has been received yet; don't pay before the goods arrive."
+   ],
+   "read_ok": true,
+   "seconds": 2.15,
+   "api_error": false,
+   "preview": "invoices/tune-022.jpg"
+  },
+  {
+   "id": "tune-023",
+   "set": "tune",
+   "render": "scan",
+   "layout": "classic",
+   "scenario": "clean",
+   "supplier": "Malolos Rice & Grains Co.",
+   "number": "INV/2026/2478",
+   "total": 57400.0,
+   "true_po": "P00051",
+   "matched_po": "P00051",
+   "expected": "ready",
+   "got": "ready",
+   "correct": true,
+   "planted": [],
+   "agent": [],
+   "read_ok": true,
+   "seconds": 1.91,
+   "api_error": false,
+   "preview": "invoices/tune-023.jpg"
+  },
+  {
+   "id": "tune-024",
+   "set": "tune",
+   "render": "pdf",
+   "layout": "compact",
+   "scenario": "two errors",
+   "supplier": "Tarlac Household Care Supply",
+   "number": "003273",
+   "total": 114589.44,
+   "true_po": "P00057",
+   "matched_po": "P00057",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "PO reference left off the invoice",
+    "Price of HHC-004 raised: ₱2,152.80 vs PO ₱1,872.00"
+   ],
+   "agent": [
+    "No PO reference on the invoice. Best match by items and quantities: P00057.",
+    "Bath Soap 90g (box of 72): billed ₱2,152.80/unit, PO price is ₱1,872.00."
+   ],
+   "read_ok": true,
+   "seconds": 1.93,
+   "api_error": false,
+   "preview": "invoices/tune-024.jpg"
+  },
+  {
+   "id": "tune-025",
+   "set": "tune",
+   "render": "scan",
+   "layout": "classic",
+   "scenario": "wrong_po_ref",
+   "supplier": "Pampanga Beverage Trading Corp.",
+   "number": "002771",
+   "total": 41440.0,
+   "true_po": "P00052",
+   "matched_po": "P00052",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "Wrong PO cited: P00027 (really P00052)"
+   ],
+   "agent": [
+    "Invoice cites PO P00027, but its items and quantities match P00052.",
+    "Invoice date 2026-05-09 is before the PO date 2026-08-30; check it was read correctly."
+   ],
+   "read_ok": false,
+   "seconds": 2.4,
+   "api_error": false,
+   "preview": "invoices/tune-025.jpg"
+  },
+  {
+   "id": "tune-026",
+   "set": "tune",
+   "render": "scan",
+   "layout": "statement",
+   "scenario": "duplicate_invoice",
+   "supplier": "Bulacan Canned Goods Distributors",
+   "number": "SI-2026-02124",
+   "total": 49996.8,
+   "true_po": "P00022",
+   "matched_po": "P00022",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": false,
+   "planted": [
+    "Billed before anything on P00022 was delivered",
+    "Duplicate of tune-008"
+   ],
+   "agent": [
+    "Nothing on P00022 has been received yet; don't pay before the goods arrive."
+   ],
+   "read_ok": true,
+   "seconds": 2.3,
+   "api_error": false,
+   "preview": "invoices/tune-026.jpg"
+  },
+  {
+   "id": "tune-027",
+   "set": "tune",
+   "render": "photo",
+   "layout": "classic",
+   "scenario": "clean",
+   "supplier": "Pangasinan Snacks Corp.",
+   "number": "SI-2026-03758",
+   "total": 23968.0,
+   "true_po": "P00112",
+   "matched_po": "P00112",
+   "expected": "ready",
+   "got": "ready",
+   "correct": true,
+   "planted": [],
+   "agent": [],
+   "read_ok": true,
+   "seconds": 1.84,
+   "api_error": false,
+   "preview": "invoices/tune-027.jpg"
+  },
+  {
+   "id": "tune-028",
+   "set": "tune",
+   "render": "pdf",
+   "layout": "classic",
+   "scenario": "clean",
+   "supplier": "Malolos Rice & Grains Co.",
+   "number": "INV/2026/2497",
+   "total": 161560.0,
+   "true_po": "P00108",
+   "matched_po": "P00108",
+   "expected": "ready",
+   "got": "ready",
+   "correct": true,
+   "planted": [],
+   "agent": [],
+   "read_ok": true,
+   "seconds": 2.1,
+   "api_error": false,
+   "preview": "invoices/tune-028.jpg"
+  },
+  {
+   "id": "tune-029",
+   "set": "tune",
+   "render": "pdf",
+   "layout": "statement",
+   "scenario": "missing_po_ref",
+   "supplier": "Bulacan Canned Goods Distributors",
+   "number": "SI-2026-02137",
+   "total": 54241.6,
+   "true_po": "P00017",
+   "matched_po": "P00017",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "PO reference left off the invoice"
+   ],
+   "agent": [
+    "No PO reference on the invoice. Best match by items and quantities: P00017."
+   ],
+   "read_ok": true,
+   "seconds": 2.5,
+   "api_error": false,
+   "preview": "invoices/tune-029.jpg"
+  },
+  {
+   "id": "tune-030",
+   "set": "tune",
+   "render": "photo",
+   "layout": "classic",
+   "scenario": "missing_po_ref",
+   "supplier": "Pangasinan Snacks Corp.",
+   "number": "SI-2026-03779",
+   "total": 18936.96,
+   "true_po": "P00093",
+   "matched_po": "P00093",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "PO reference left off the invoice"
+   ],
+   "agent": [
+    "No PO reference on the invoice. Best match by items and quantities: P00093."
+   ],
+   "read_ok": true,
+   "seconds": 2.31,
+   "api_error": false,
+   "preview": "invoices/tune-030.jpg"
+  },
+  {
+   "id": "tune-031",
+   "set": "tune",
+   "render": "pdf",
+   "layout": "statement",
+   "scenario": "two errors",
+   "supplier": "Bulacan Canned Goods Distributors",
+   "number": "SI-2026-02146",
+   "total": 116083.52,
+   "true_po": "P00040",
+   "matched_po": "P00040",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "Over-billed CAN-004: billed 27, received 25",
+    "Price of CAN-004 raised: ₱1,848.00 vs PO ₱1,680.00"
+   ],
+   "agent": [
+    "Tuna Flakes in Oil 180g (case of 48): billed 27, only 25 received.",
+    "Tuna Flakes in Oil 180g (case of 48): billed ₱1,848.00/unit, PO price is ₱1,680.00."
+   ],
+   "read_ok": true,
+   "seconds": 1.68,
+   "api_error": false,
+   "preview": "invoices/tune-031.jpg"
+  },
+  {
+   "id": "tune-032",
+   "set": "tune",
+   "render": "scan",
+   "layout": "classic",
+   "scenario": "clean",
+   "supplier": "Pangasinan Snacks Corp.",
+   "number": "SI-2026-03790",
+   "total": 17875.2,
+   "true_po": "P00090",
+   "matched_po": "P00090",
+   "expected": "ready",
+   "got": "ready",
+   "correct": true,
+   "planted": [],
+   "agent": [],
+   "read_ok": true,
+   "seconds": 2.41,
+   "api_error": false,
+   "preview": "invoices/tune-032.jpg"
+  },
+  {
+   "id": "tune-033",
+   "set": "tune",
+   "render": "pdf",
+   "layout": "classic",
+   "scenario": "math_error",
+   "supplier": "Malolos Rice & Grains Co.",
+   "number": "INV/2026/2513",
+   "total": 73628.75,
+   "true_po": "P00030",
+   "matched_po": "P00030",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "Math error in the vat: printed ₱9,603.75, should be ₱7,683.00"
+   ],
+   "agent": [
+    "12% VAT on ₱64,025.00 is ₱7,683.00, invoice says ₱9,603.75."
+   ],
+   "read_ok": true,
+   "seconds": 2.12,
+   "api_error": false,
+   "preview": "invoices/tune-033.jpg"
+  },
+  {
+   "id": "tune-034",
+   "set": "tune",
+   "render": "scan",
+   "layout": "compact",
+   "scenario": "clean",
+   "supplier": "Laguna Dairy & Bakery Supply",
+   "number": "INV/2026/2101",
+   "total": 107251.2,
+   "true_po": "P00113",
+   "matched_po": null,
+   "expected": "ready",
+   "got": "needs_review",
+   "correct": false,
+   "planted": [],
+   "agent": [
+    "The invoice couldn't be read. A person needs to enter it."
+   ],
+   "read_ok": false,
+   "seconds": 0.0,
+   "api_error": true,
+   "preview": "invoices/tune-034.jpg"
+  },
+  {
+   "id": "tune-035",
+   "set": "tune",
+   "render": "scan",
+   "layout": "statement",
+   "scenario": "price_mismatch",
+   "supplier": "Bulacan Canned Goods Distributors",
+   "number": "SI-2026-02153",
+   "total": 121497.6,
+   "true_po": "P00043",
+   "matched_po": "P00043",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "Price of CAN-002 raised: ₱2,112.00 vs PO ₱1,920.00"
+   ],
+   "agent": [
+    "Corned Beef 150g (case of 48): billed ₱2,112.00/unit, PO price is ₱1,920.00."
+   ],
+   "read_ok": true,
+   "seconds": 3.31,
+   "api_error": false,
+   "preview": "invoices/tune-035.jpg"
+  },
+  {
+   "id": "tune-036",
+   "set": "tune",
+   "render": "pdf",
+   "layout": "statement",
+   "scenario": "clean",
+   "supplier": "Batangas Coffee & Creamer Trading",
+   "number": "BCC-3415",
+   "total": 119078.4,
+   "true_po": "P00003",
+   "matched_po": "P00003",
+   "expected": "ready",
+   "got": "ready",
+   "correct": true,
+   "planted": [],
+   "agent": [],
+   "read_ok": true,
+   "seconds": 2.4,
+   "api_error": false,
+   "preview": "invoices/tune-036.jpg"
+  },
+  {
+   "id": "tune-037",
+   "set": "tune",
+   "render": "pdf",
+   "layout": "compact",
+   "scenario": "price_mismatch",
+   "supplier": "Laguna Dairy & Bakery Supply",
+   "number": "INV/2026/2122",
+   "total": 46641.28,
+   "true_po": "P00033",
+   "matched_po": "P00033",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "Price of DRY-002 raised: ₱2,534.40 vs PO ₱2,304.00"
+   ],
+   "agent": [
+    "Condensed Milk 300ml (case of 48): billed ₱2,534.40/unit, PO price is ₱2,304.00."
+   ],
+   "read_ok": true,
+   "seconds": 3.79,
+   "api_error": false,
+   "preview": "invoices/tune-037.jpg"
+  },
+  {
+   "id": "tune-038",
+   "set": "tune",
+   "render": "pdf",
+   "layout": "compact",
+   "scenario": "unknown_item",
+   "supplier": "Laguna Dairy & Bakery Supply",
+   "number": "INV/2026/2147",
+   "total": 99196.16,
+   "true_po": "P00102",
+   "matched_po": "P00102",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "Added an item not on the PO: Sweetened Condensed 300ml x48"
+   ],
+   "agent": [
+    "'Sweetened Condensed 300ml x48' is billed but isn't on P00102."
+   ],
+   "read_ok": true,
+   "seconds": 2.32,
+   "api_error": false,
+   "preview": "invoices/tune-038.jpg"
+  },
+  {
+   "id": "tune-039",
+   "set": "tune",
+   "render": "scan",
+   "layout": "classic",
+   "scenario": "over_billed_qty",
+   "supplier": "Pampanga Beverage Trading Corp.",
+   "number": "002807",
+   "total": 54868.8,
+   "true_po": "P00111",
+   "matched_po": "P00111",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "Over-billed BEV-001: billed 50, received 40"
+   ],
+   "agent": [
+    "Cola 1.5L (case of 12): billed 50, only 40 received."
+   ],
+   "read_ok": true,
+   "seconds": 2.56,
+   "api_error": false,
+   "preview": "invoices/tune-039.jpg"
+  },
+  {
+   "id": "tune-040",
+   "set": "tune",
+   "render": "scan",
+   "layout": "compact",
+   "scenario": "duplicate_invoice",
+   "supplier": "Tarlac Household Care Supply",
+   "number": "003273",
+   "total": 114589.44,
+   "true_po": "P00057",
+   "matched_po": "P00057",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "PO reference left off the invoice",
+    "Price of HHC-004 raised: ₱2,152.80 vs PO ₱1,872.00",
+    "Duplicate of tune-024"
+   ],
+   "agent": [
+    "Tarlac Household Care Supply invoice 003273 was already received. Possible double payment.",
+    "No PO reference on the invoice. Best match by items and quantities: P00057.",
+    "Bath Soap 90g (box of 72): billed ₱2,152.80/unit, PO price is ₱1,872.00."
+   ],
+   "read_ok": true,
+   "seconds": 2.1,
+   "api_error": false,
+   "preview": "invoices/tune-040.jpg"
+  },
+  {
+   "id": "tune-041",
+   "set": "tune",
+   "render": "photo",
+   "layout": "classic",
+   "scenario": "clean",
+   "supplier": "Malolos Rice & Grains Co.",
+   "number": "INV/2026/2517",
+   "total": 42980.0,
+   "true_po": "P00005",
+   "matched_po": "P00005",
+   "expected": "ready",
+   "got": "ready",
+   "correct": true,
+   "planted": [],
+   "agent": [],
+   "read_ok": true,
+   "seconds": 2.16,
+   "api_error": false,
+   "preview": "invoices/tune-041.jpg"
+  },
+  {
+   "id": "tune-042",
+   "set": "tune",
+   "render": "pdf",
+   "layout": "statement",
+   "scenario": "clean",
+   "supplier": "Bulacan Canned Goods Distributors",
+   "number": "SI-2026-02172",
+   "total": 111592.32,
+   "true_po": "P00104",
+   "matched_po": "P00104",
+   "expected": "ready",
+   "got": "ready",
+   "correct": true,
+   "planted": [],
+   "agent": [],
+   "read_ok": true,
+   "seconds": 1.92,
+   "api_error": false,
+   "preview": "invoices/tune-042.jpg"
+  },
+  {
+   "id": "tune-043",
+   "set": "tune",
+   "render": "pdf",
+   "layout": "classic",
+   "scenario": "clean",
+   "supplier": "Pampanga Beverage Trading Corp.",
+   "number": "002840",
+   "total": 17640.0,
+   "true_po": "P00094",
+   "matched_po": "P00094",
+   "expected": "ready",
+   "got": "ready",
+   "correct": true,
+   "planted": [],
+   "agent": [],
+   "read_ok": true,
+   "seconds": 2.98,
+   "api_error": false,
+   "preview": "invoices/tune-043.jpg"
+  },
+  {
+   "id": "tune-044",
+   "set": "tune",
+   "render": "scan",
+   "layout": "statement",
+   "scenario": "clean",
+   "supplier": "Bulacan Canned Goods Distributors",
+   "number": "SI-2026-02174",
+   "total": 263513.6,
+   "true_po": "P00020",
+   "matched_po": "P00020",
+   "expected": "ready",
+   "got": "ready",
+   "correct": true,
+   "planted": [],
+   "agent": [],
+   "read_ok": true,
+   "seconds": 2.1,
+   "api_error": false,
+   "preview": "invoices/tune-044.jpg"
+  },
+  {
+   "id": "tune-045",
+   "set": "tune",
+   "render": "scan",
+   "layout": "statement",
+   "scenario": "two errors",
+   "supplier": "Bulacan Canned Goods Distributors",
+   "number": "SI-2026-02197",
+   "total": 158907.84,
+   "true_po": "P00070",
+   "matched_po": "P00070",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "Over-billed CAN-003: billed 40, received 30",
+    "Price of CAN-003 raised: ₱1,600.80 vs PO ₱1,392.00"
+   ],
+   "agent": [
+    "Meat Loaf 150g (case of 48): billed 40, only 30 received.",
+    "Meat Loaf 150g (case of 48): billed ₱1,600.80/unit, PO price is ₱1,392.00."
+   ],
+   "read_ok": true,
+   "seconds": 2.59,
+   "api_error": false,
+   "preview": "invoices/tune-045.jpg"
+  },
+  {
+   "id": "tune-046",
+   "set": "tune",
+   "render": "pdf",
+   "layout": "classic",
+   "scenario": "unknown_item",
+   "supplier": "Pangasinan Snacks Corp.",
+   "number": "SI-2026-03821",
+   "total": 55151.04,
+   "true_po": "P00058",
+   "matched_po": "P00058",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "Added an item not on the PO: Potato Crisps Orig 60g x24"
+   ],
+   "agent": [
+    "'Potato Crisps Orig 60g x24' is billed but isn't on P00058."
+   ],
+   "read_ok": true,
+   "seconds": 2.38,
+   "api_error": false,
+   "preview": "invoices/tune-046.jpg"
+  },
+  {
+   "id": "tune-047",
+   "set": "tune",
+   "render": "scan",
+   "layout": "compact",
+   "scenario": "math_error",
+   "supplier": "Tarlac Household Care Supply",
+   "number": "003289",
+   "total": 108192.0,
+   "true_po": "P00071",
+   "matched_po": "P00071",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "Math error in the vat: printed ₱14,112.00, should be ₱11,289.60"
+   ],
+   "agent": [
+    "12% VAT on ₱94,080.00 is ₱11,289.60, invoice says ₱14,112.00."
+   ],
+   "read_ok": true,
+   "seconds": 2.84,
+   "api_error": false,
+   "preview": "invoices/tune-047.jpg"
+  },
+  {
+   "id": "tune-048",
+   "set": "tune",
+   "render": "pdf",
+   "layout": "classic",
+   "scenario": "clean",
+   "supplier": "Pangasinan Snacks Corp.",
+   "number": "SI-2026-03857",
+   "total": 39760.0,
+   "true_po": "P00072",
+   "matched_po": "P00072",
+   "expected": "ready",
+   "got": "ready",
+   "correct": true,
+   "planted": [],
+   "agent": [],
+   "read_ok": true,
+   "seconds": 2.04,
+   "api_error": false,
+   "preview": "invoices/tune-048.jpg"
+  },
+  {
+   "id": "tune-049",
+   "set": "tune",
+   "render": "scan",
+   "layout": "classic",
+   "scenario": "over_billed_qty",
+   "supplier": "Malolos Rice & Grains Co.",
+   "number": "INV/2026/2547",
+   "total": 143360.0,
+   "true_po": "P00078",
+   "matched_po": "P00078",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "Over-billed GRN-002: billed 20, received 10"
+   ],
+   "agent": [
+    "Premium Jasmine Rice 25kg (sack): billed 20, only 10 received."
+   ],
+   "read_ok": true,
+   "seconds": 2.15,
+   "api_error": false,
+   "preview": "invoices/tune-049.jpg"
+  },
+  {
+   "id": "tune-050",
+   "set": "tune",
+   "render": "scan",
+   "layout": "compact",
+   "scenario": "unknown_item",
+   "supplier": "Tarlac Household Care Supply",
+   "number": "003296",
+   "total": 65802.24,
+   "true_po": "P00001",
+   "matched_po": "P00001",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "Added an item not on the PO: Detergent Powder 66g x72"
+   ],
+   "agent": [
+    "'Detergent Powder 66g x72' is billed but isn't on P00001."
+   ],
+   "read_ok": true,
+   "seconds": 2.85,
+   "api_error": false,
+   "preview": "invoices/tune-050.jpg"
+  },
+  {
+   "id": "tune-051",
+   "set": "tune",
+   "render": "pdf",
+   "layout": "statement",
+   "scenario": "price_mismatch",
+   "supplier": "Batangas Coffee & Creamer Trading",
+   "number": "BCC-3444",
+   "total": 66452.4,
+   "true_po": "P00055",
+   "matched_po": "P00055",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "Price of COF-001 raised: ₱173.25 vs PO ₱165.00"
+   ],
+   "agent": [
+    "3-in-1 Coffee Original 20g (pack of 30): billed ₱173.25/unit, PO price is ₱165.00."
+   ],
+   "read_ok": true,
+   "seconds": 2.18,
+   "api_error": false,
+   "preview": "invoices/tune-051.jpg"
+  },
+  {
+   "id": "tune-052",
+   "set": "tune",
+   "render": "pdf",
+   "layout": "classic",
+   "scenario": "clean",
+   "supplier": "Malolos Rice & Grains Co.",
+   "number": "INV/2026/2577",
+   "total": 86800.0,
+   "true_po": "P00076",
+   "matched_po": "P00076",
+   "expected": "ready",
+   "got": "ready",
+   "correct": true,
+   "planted": [],
+   "agent": [],
+   "read_ok": true,
+   "seconds": 2.43,
+   "api_error": false,
+   "preview": "invoices/tune-052.jpg"
+  },
+  {
+   "id": "tune-053",
+   "set": "tune",
+   "render": "pdf",
+   "layout": "compact",
+   "scenario": "price_mismatch",
+   "supplier": "Tarlac Household Care Supply",
+   "number": "003305",
+   "total": 73610.88,
+   "true_po": "P00004",
+   "matched_po": "P00004",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "Price of HHC-002 raised: ₱453.60 vs PO ₱432.00"
+   ],
+   "agent": [
+    "Fabric Conditioner 22ml (pack of 72): billed ₱453.60/unit, PO price is ₱432.00."
+   ],
+   "read_ok": true,
+   "seconds": 1.75,
+   "api_error": false,
+   "preview": "invoices/tune-053.jpg"
+  },
+  {
+   "id": "tune-054",
+   "set": "tune",
+   "render": "pdf",
+   "layout": "compact",
+   "scenario": "unknown_item",
+   "supplier": "Gitnang Luzon Noodle Supply Inc.",
+   "number": "GLN-2419",
+   "total": 85982.4,
+   "true_po": "P00068",
+   "matched_po": "P00068",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "Added an item not on the PO: Canton Chilimansi 60g x72"
+   ],
+   "agent": [
+    "'Canton Chilimansi 60g x72' is billed but isn't on P00068."
+   ],
+   "read_ok": true,
+   "seconds": 2.04,
+   "api_error": false,
+   "preview": "invoices/tune-054.jpg"
+  },
+  {
+   "id": "tune-055",
+   "set": "tune",
+   "render": "scan",
+   "layout": "classic",
+   "scenario": "wrong_po_ref",
+   "supplier": "Pampanga Beverage Trading Corp.",
+   "number": "002844",
+   "total": 76294.4,
+   "true_po": "P00048",
+   "matched_po": "P00048",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "Wrong PO cited: P00094 (really P00048)"
+   ],
+   "agent": [
+    "Invoice cites PO P00094, but its items and quantities match P00048."
+   ],
+   "read_ok": true,
+   "seconds": 4.12,
+   "api_error": false,
+   "preview": "invoices/tune-055.jpg"
+  },
+  {
+   "id": "tune-056",
+   "set": "tune",
+   "render": "scan",
+   "layout": "compact",
+   "scenario": "over_billed_qty",
+   "supplier": "Gitnang Luzon Noodle Supply Inc.",
+   "number": "GLN-2445",
+   "total": 41126.4,
+   "true_po": "P00079",
+   "matched_po": "P00079",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "Over-billed NDL-003: billed 30, received 25"
+   ],
+   "agent": [
+    "Instant Mami Chicken 55g (box of 72): billed 30, only 25 received."
+   ],
+   "read_ok": true,
+   "seconds": 2.35,
+   "api_error": false,
+   "preview": "invoices/tune-056.jpg"
+  },
+  {
+   "id": "tune-057",
+   "set": "tune",
+   "render": "photo",
+   "layout": "classic",
+   "scenario": "duplicate_invoice",
+   "supplier": "Malolos Rice & Grains Co.",
+   "number": "INV/2026/2577",
+   "total": 86800.0,
+   "true_po": "P00076",
+   "matched_po": "P00076",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "Duplicate of tune-052"
+   ],
+   "agent": [
+    "Malolos Rice & Grains Co. invoice INV/2026/2577 was already received. Possible double payment."
+   ],
+   "read_ok": true,
+   "seconds": 2.48,
+   "api_error": false,
+   "preview": "invoices/tune-057.jpg"
+  },
+  {
+   "id": "tune-058",
+   "set": "tune",
+   "render": "pdf",
+   "layout": "classic",
+   "scenario": "math_error",
+   "supplier": "Pangasinan Snacks Corp.",
+   "number": "SI-2026-03884",
+   "total": 52628.8,
+   "true_po": "P00074",
+   "matched_po": "P00074",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "Math error in the line total: printed ₱17,050.00, should be ₱16,800.00"
+   ],
+   "agent": [
+    "Line 'Corn Snack BBQ 100g x24': 20 × ₱840.00 = ₱16,800.00, invoice says ₱17,050.00."
+   ],
+   "read_ok": true,
+   "seconds": 2.21,
+   "api_error": false,
+   "preview": "invoices/tune-058.jpg"
+  },
+  {
+   "id": "tune-059",
+   "set": "tune",
+   "render": "photo",
+   "layout": "compact",
+   "scenario": "math_error",
+   "supplier": "Gitnang Luzon Noodle Supply Inc.",
+   "number": "GLN-2460",
+   "total": 51755.2,
+   "true_po": "P00120",
+   "matched_po": "P00120",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "Math error in the line total: printed ₱6,250.00, should be ₱12,500.00"
+   ],
+   "agent": [
+    "Line 'Sotanghon 100g x50': 10 × ₱1,250.00 = ₱12,500.00, invoice says ₱6,250.00."
+   ],
+   "read_ok": true,
+   "seconds": 4.17,
+   "api_error": false,
+   "preview": "invoices/tune-059.jpg"
+  },
+  {
+   "id": "tune-060",
+   "set": "tune",
+   "render": "pdf",
+   "layout": "statement",
+   "scenario": "price_mismatch",
+   "supplier": "Batangas Coffee & Creamer Trading",
+   "number": "BCC-3447",
+   "total": 24435.6,
+   "true_po": "P00095",
+   "matched_po": "P00095",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "Price of COF-001 raised: ₱189.75 vs PO ₱165.00"
+   ],
+   "agent": [
+    "3-in-1 Coffee Original 20g (pack of 30): billed ₱189.75/unit, PO price is ₱165.00."
+   ],
+   "read_ok": true,
+   "seconds": 2.77,
+   "api_error": false,
+   "preview": "invoices/tune-060.jpg"
+  },
+  {
+   "id": "holdout-001",
+   "set": "holdout",
+   "render": "pdf",
+   "layout": "compact",
+   "scenario": "math_error",
+   "supplier": "Laguna Dairy & Bakery Supply",
+   "number": "INV/2026/21161",
+   "total": 85314.4,
+   "true_po": "P00014",
+   "matched_po": "P00014",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "Math error in the total: printed ₱85,314.40, should be ₱85,814.40"
+   ],
+   "agent": [
+    "Subtotal + VAT = ₱85,814.40, invoice total says ₱85,314.40."
+   ],
+   "read_ok": true,
+   "seconds": 2.52,
+   "api_error": false,
+   "preview": "invoices/holdout-001.jpg"
+  },
+  {
+   "id": "holdout-002",
+   "set": "holdout",
+   "render": "photo",
+   "layout": "statement",
+   "scenario": "price_mismatch",
+   "supplier": "Batangas Coffee & Creamer Trading",
+   "number": "BCC-24862",
+   "total": 34675.2,
+   "true_po": "P00056",
+   "matched_po": "P00056",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "Price of COF-002 raised: ₱1,584.00 vs PO ₱1,440.00"
+   ],
+   "agent": [
+    "Instant Coffee Classic 50g (case of 24): billed ₱1,584.00/unit, PO price is ₱1,440.00."
+   ],
+   "read_ok": true,
+   "seconds": 2.22,
+   "api_error": false,
+   "preview": "invoices/holdout-002.jpg"
+  },
+  {
+   "id": "holdout-003",
+   "set": "holdout",
+   "render": "pdf",
+   "layout": "compact",
+   "scenario": "wrong_po_ref",
+   "supplier": "Gitnang Luzon Noodle Supply Inc.",
+   "number": "GLN-24880",
+   "total": 48384.0,
+   "true_po": "P00035",
+   "matched_po": "P00035",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "Wrong PO cited: P00011 (really P00035)"
+   ],
+   "agent": [
+    "Invoice cites PO P00011, but its items and quantities match P00035."
+   ],
+   "read_ok": true,
+   "seconds": 2.07,
+   "api_error": false,
+   "preview": "invoices/holdout-003.jpg"
+  },
+  {
+   "id": "holdout-004",
+   "set": "holdout",
+   "render": "scan",
+   "layout": "classic",
+   "scenario": "two errors",
+   "supplier": "Pangasinan Snacks Corp.",
+   "number": "SI-2026-21648",
+   "total": 55932.8,
+   "true_po": "P00089",
+   "matched_po": "P00089",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "PO reference left off the invoice",
+    "Price of SNK-004 raised: ₱690.00 vs PO ₱600.00"
+   ],
+   "agent": [
+    "No PO reference on the invoice. Best match by items and quantities: P00089.",
+    "Chicharon Spicy 50g (case of 24): billed ₱690.00/unit, PO price is ₱600.00."
+   ],
+   "read_ok": true,
+   "seconds": 3.01,
+   "api_error": false,
+   "preview": "invoices/holdout-004.jpg"
+  },
+  {
+   "id": "holdout-005",
+   "set": "holdout",
+   "render": "pdf",
+   "layout": "compact",
+   "scenario": "not_received",
+   "supplier": "Laguna Dairy & Bakery Supply",
+   "number": "INV/2026/21167",
+   "total": 249267.2,
+   "true_po": "P00075",
+   "matched_po": "P00075",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "Billed before anything on P00075 was delivered"
+   ],
+   "agent": [
+    "Nothing on P00075 has been received yet; don't pay before the goods arrive."
+   ],
+   "read_ok": true,
+   "seconds": 2.69,
+   "api_error": false,
+   "preview": "invoices/holdout-005.jpg"
+  },
+  {
+   "id": "holdout-006",
+   "set": "holdout",
+   "render": "pdf",
+   "layout": "classic",
+   "scenario": "price_mismatch",
+   "supplier": "Pampanga Beverage Trading Corp.",
+   "number": "022369",
+   "total": 54028.8,
+   "true_po": "P00099",
+   "matched_po": "P00099",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "Price of BEV-001 raised: ₱936.00 vs PO ₱780.00"
+   ],
+   "agent": [
+    "Cola 1.5L (case of 12): billed ₱936.00/unit, PO price is ₱780.00."
+   ],
+   "read_ok": true,
+   "seconds": 2.61,
+   "api_error": false,
+   "preview": "invoices/holdout-006.jpg"
+  },
+  {
+   "id": "holdout-007",
+   "set": "holdout",
+   "render": "photo",
+   "layout": "compact",
+   "scenario": "clean",
+   "supplier": "Tarlac Household Care Supply",
+   "number": "022828",
+   "total": 175257.6,
+   "true_po": "P00006",
+   "matched_po": "P00006",
+   "expected": "ready",
+   "got": "ready",
+   "correct": true,
+   "planted": [],
+   "agent": [],
+   "read_ok": true,
+   "seconds": 3.27,
+   "api_error": false,
+   "preview": "invoices/holdout-007.jpg"
+  },
+  {
+   "id": "holdout-008",
+   "set": "holdout",
+   "render": "pdf",
+   "layout": "compact",
+   "scenario": "clean",
+   "supplier": "Laguna Dairy & Bakery Supply",
+   "number": "INV/2026/21177",
+   "total": 176601.6,
+   "true_po": "P00042",
+   "matched_po": "P00042",
+   "expected": "ready",
+   "got": "ready",
+   "correct": true,
+   "planted": [],
+   "agent": [],
+   "read_ok": true,
+   "seconds": 2.18,
+   "api_error": false,
+   "preview": "invoices/holdout-008.jpg"
+  },
+  {
+   "id": "holdout-009",
+   "set": "holdout",
+   "render": "scan",
+   "layout": "statement",
+   "scenario": "clean",
+   "supplier": "Batangas Coffee & Creamer Trading",
+   "number": "BCC-24873",
+   "total": 58464.0,
+   "true_po": "P00077",
+   "matched_po": "P00077",
+   "expected": "ready",
+   "got": "ready",
+   "correct": true,
+   "planted": [],
+   "agent": [],
+   "read_ok": true,
+   "seconds": 3.25,
+   "api_error": false,
+   "preview": "invoices/holdout-009.jpg"
+  },
+  {
+   "id": "holdout-010",
+   "set": "holdout",
+   "render": "scan",
+   "layout": "compact",
+   "scenario": "price_mismatch",
+   "supplier": "Laguna Dairy & Bakery Supply",
+   "number": "INV/2026/21198",
+   "total": 112250.88,
+   "true_po": "P00019",
+   "matched_po": "P00019",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "Price of DRY-001 raised: ₱1,900.80 vs PO ₱1,728.00"
+   ],
+   "agent": [
+    "Evaporated Milk 370ml (case of 48): billed ₱1,900.80/unit, PO price is ₱1,728.00."
+   ],
+   "read_ok": true,
+   "seconds": 2.59,
+   "api_error": false,
+   "preview": "invoices/holdout-010.jpg"
+  },
+  {
+   "id": "holdout-011",
+   "set": "holdout",
+   "render": "scan",
+   "layout": "compact",
+   "scenario": "price_mismatch",
+   "supplier": "Tarlac Household Care Supply",
+   "number": "022836",
+   "total": 142947.84,
+   "true_po": "P00015",
+   "matched_po": "P00015",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "Price of HHC-004 raised: ₱2,152.80 vs PO ₱1,872.00"
+   ],
+   "agent": [
+    "Bath Soap 90g (box of 72): billed ₱2,152.80/unit, PO price is ₱1,872.00."
+   ],
+   "read_ok": true,
+   "seconds": 2.53,
+   "api_error": false,
+   "preview": "invoices/holdout-011.jpg"
+  },
+  {
+   "id": "holdout-012",
+   "set": "holdout",
+   "render": "scan",
+   "layout": "compact",
+   "scenario": "clean",
+   "supplier": "Tarlac Household Care Supply",
+   "number": "022871",
+   "total": 103918.08,
+   "true_po": "P00025",
+   "matched_po": "P00025",
+   "expected": "ready",
+   "got": "ready",
+   "correct": true,
+   "planted": [],
+   "agent": [],
+   "read_ok": true,
+   "seconds": 2.88,
+   "api_error": false,
+   "preview": "invoices/holdout-012.jpg"
+  },
+  {
+   "id": "holdout-013",
+   "set": "holdout",
+   "render": "photo",
+   "layout": "compact",
+   "scenario": "unknown_item",
+   "supplier": "Gitnang Luzon Noodle Supply Inc.",
+   "number": "GLN-24906",
+   "total": 80528.0,
+   "true_po": "P00044",
+   "matched_po": "P00044",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "Added an item not on the PO: Canton Kalamansi 60g x72"
+   ],
+   "agent": [
+    "'Canton Kalamansi 60g x72' is billed but isn't on P00044."
+   ],
+   "read_ok": true,
+   "seconds": 2.2,
+   "api_error": false,
+   "preview": "invoices/holdout-013.jpg"
+  },
+  {
+   "id": "holdout-014",
+   "set": "holdout",
+   "render": "pdf",
+   "layout": "compact",
+   "scenario": "over_billed_qty",
+   "supplier": "Gitnang Luzon Noodle Supply Inc.",
+   "number": "GLN-24928",
+   "total": 90641.6,
+   "true_po": "P00105",
+   "matched_po": "P00105",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "Over-billed NDL-002: billed 10, received 6"
+   ],
+   "agent": [
+    "Pancit Canton Chilimansi 60g (box of 72): billed 10, only 6 received."
+   ],
+   "read_ok": true,
+   "seconds": 3.13,
+   "api_error": false,
+   "preview": "invoices/holdout-014.jpg"
+  },
+  {
+   "id": "holdout-015",
+   "set": "holdout",
+   "render": "pdf",
+   "layout": "statement",
+   "scenario": "not_received",
+   "supplier": "Batangas Coffee & Creamer Trading",
+   "number": "BCC-24895",
+   "total": 26880.0,
+   "true_po": "P00053",
+   "matched_po": "P00053",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "Billed before anything on P00053 was delivered"
+   ],
+   "agent": [
+    "Nothing on P00053 has been received yet; don't pay before the goods arrive."
+   ],
+   "read_ok": true,
+   "seconds": 2.5,
+   "api_error": false,
+   "preview": "invoices/holdout-015.jpg"
+  },
+  {
+   "id": "holdout-016",
+   "set": "holdout",
+   "render": "photo",
+   "layout": "compact",
+   "scenario": "over_billed_qty",
+   "supplier": "Gitnang Luzon Noodle Supply Inc.",
+   "number": "GLN-24935",
+   "total": 30240.0,
+   "true_po": "P00114",
+   "matched_po": "P00114",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "Over-billed NDL-001: billed 20, received 10"
+   ],
+   "agent": [
+    "Pancit Canton Kalamansi 60g (box of 72): billed 20, only 10 received."
+   ],
+   "read_ok": true,
+   "seconds": 2.31,
+   "api_error": false,
+   "preview": "invoices/holdout-016.jpg"
+  },
+  {
+   "id": "holdout-017",
+   "set": "holdout",
+   "render": "pdf",
+   "layout": "classic",
+   "scenario": "math_error",
+   "supplier": "Malolos Rice & Grains Co.",
+   "number": "INV/2026/23323",
+   "total": 109610.0,
+   "true_po": "P00045",
+   "matched_po": "P00045",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "Math error in the vat: printed ₱12,610.00, should be ₱11,640.00"
+   ],
+   "agent": [
+    "12% VAT on ₱97,000.00 is ₱11,640.00, invoice says ₱12,610.00."
+   ],
+   "read_ok": true,
+   "seconds": 2.66,
+   "api_error": false,
+   "preview": "invoices/holdout-017.jpg"
+  },
+  {
+   "id": "holdout-018",
+   "set": "holdout",
+   "render": "pdf",
+   "layout": "statement",
+   "scenario": "missing_po_ref",
+   "supplier": "Batangas Coffee & Creamer Trading",
+   "number": "BCC-24910",
+   "total": 85596.0,
+   "true_po": "P00021",
+   "matched_po": "P00021",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "PO reference left off the invoice"
+   ],
+   "agent": [
+    "No PO reference on the invoice. Best match by items and quantities: P00021."
+   ],
+   "read_ok": true,
+   "seconds": 2.06,
+   "api_error": false,
+   "preview": "invoices/holdout-018.jpg"
+  },
+  {
+   "id": "holdout-019",
+   "set": "holdout",
+   "render": "pdf",
+   "layout": "compact",
+   "scenario": "clean",
+   "supplier": "Laguna Dairy & Bakery Supply",
+   "number": "INV/2026/21213",
+   "total": 129337.6,
+   "true_po": "P00085",
+   "matched_po": "P00085",
+   "expected": "ready",
+   "got": "ready",
+   "correct": true,
+   "planted": [],
+   "agent": [],
+   "read_ok": true,
+   "seconds": 2.39,
+   "api_error": false,
+   "preview": "invoices/holdout-019.jpg"
+  },
+  {
+   "id": "holdout-020",
+   "set": "holdout",
+   "render": "scan",
+   "layout": "compact",
+   "scenario": "missing_po_ref",
+   "supplier": "Laguna Dairy & Bakery Supply",
+   "number": "INV/2026/21233",
+   "total": 74027.52,
+   "true_po": "P00038",
+   "matched_po": "P00038",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "PO reference left off the invoice"
+   ],
+   "agent": [
+    "No PO reference on the invoice. Best match by items and quantities: P00038."
+   ],
+   "read_ok": true,
+   "seconds": 2.52,
+   "api_error": false,
+   "preview": "invoices/holdout-020.jpg"
+  },
+  {
+   "id": "holdout-021",
+   "set": "holdout",
+   "render": "pdf",
+   "layout": "statement",
+   "scenario": "math_error",
+   "supplier": "Bulacan Canned Goods Distributors",
+   "number": "SI-2026-23872",
+   "total": 91066.7,
+   "true_po": "P00116",
+   "matched_po": "P00116",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "Math error in the vat: printed ₱10,476.70, should be ₱9,670.80"
+   ],
+   "agent": [
+    "12% VAT on ₱80,590.00 is ₱9,670.80, invoice says ₱10,476.70."
+   ],
+   "read_ok": true,
+   "seconds": 2.51,
+   "api_error": false,
+   "preview": "invoices/holdout-021.jpg"
+  },
+  {
+   "id": "holdout-022",
+   "set": "holdout",
+   "render": "photo",
+   "layout": "compact",
+   "scenario": "not_received",
+   "supplier": "Tarlac Household Care Supply",
+   "number": "022881",
+   "total": 100934.4,
+   "true_po": "P00109",
+   "matched_po": "P00109",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "Billed before anything on P00109 was delivered"
+   ],
+   "agent": [
+    "Nothing on P00109 has been received yet; don't pay before the goods arrive."
+   ],
+   "read_ok": true,
+   "seconds": 3.25,
+   "api_error": false,
+   "preview": "invoices/holdout-022.jpg"
+  },
+  {
+   "id": "holdout-023",
+   "set": "holdout",
+   "render": "pdf",
+   "layout": "classic",
+   "scenario": "clean",
+   "supplier": "Malolos Rice & Grains Co.",
+   "number": "INV/2026/23327",
+   "total": 63168.0,
+   "true_po": "P00060",
+   "matched_po": null,
+   "expected": "ready",
+   "got": "needs_review",
+   "correct": false,
+   "planted": [],
+   "agent": [
+    "The invoice couldn't be read. A person needs to enter it."
+   ],
+   "read_ok": false,
+   "seconds": 0.0,
+   "api_error": true,
+   "preview": "invoices/holdout-023.jpg"
+  },
+  {
+   "id": "holdout-024",
+   "set": "holdout",
+   "render": "pdf",
+   "layout": "classic",
+   "scenario": "unknown_item",
+   "supplier": "Malolos Rice & Grains Co.",
+   "number": "INV/2026/23359",
+   "total": 95172.0,
+   "true_po": "P00049",
+   "matched_po": "P00049",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "Added an item not on the PO: Delivery charge"
+   ],
+   "agent": [
+    "'Delivery charge' is billed but isn't on P00049."
+   ],
+   "read_ok": true,
+   "seconds": 2.57,
+   "api_error": false,
+   "preview": "invoices/holdout-024.jpg"
+  },
+  {
+   "id": "holdout-025",
+   "set": "holdout",
+   "render": "scan",
+   "layout": "classic",
+   "scenario": "wrong_po_ref",
+   "supplier": "Pangasinan Snacks Corp.",
+   "number": "SI-2026-21654",
+   "total": 13666.24,
+   "true_po": "P00009",
+   "matched_po": "P00009",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "Wrong PO cited: P00096 (really P00009)"
+   ],
+   "agent": [
+    "Invoice cites PO P00096, but its items and quantities match P00009."
+   ],
+   "read_ok": true,
+   "seconds": 3.37,
+   "api_error": false,
+   "preview": "invoices/holdout-025.jpg"
+  },
+  {
+   "id": "holdout-026",
+   "set": "holdout",
+   "render": "scan",
+   "layout": "compact",
+   "scenario": "clean",
+   "supplier": "Laguna Dairy & Bakery Supply",
+   "number": "INV/2026/21235",
+   "total": 74511.36,
+   "true_po": "P00012",
+   "matched_po": "P00012",
+   "expected": "ready",
+   "got": "ready",
+   "correct": true,
+   "planted": [],
+   "agent": [],
+   "read_ok": true,
+   "seconds": 7.86,
+   "api_error": false,
+   "preview": "invoices/holdout-026.jpg"
+  },
+  {
+   "id": "holdout-027",
+   "set": "holdout",
+   "render": "pdf",
+   "layout": "compact",
+   "scenario": "two errors",
+   "supplier": "Laguna Dairy & Bakery Supply",
+   "number": "INV/2026/21241",
+   "total": 307536.32,
+   "true_po": "P00065",
+   "matched_po": "P00065",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "Over-billed DRY-001: billed 42, received 40",
+    "Added an item not on the PO: Delivery charge"
+   ],
+   "agent": [
+    "Evaporated Milk 370ml (case of 48): billed 42, only 40 received.",
+    "'Delivery charge' is billed but isn't on P00065."
+   ],
+   "read_ok": true,
+   "seconds": 3.69,
+   "api_error": false,
+   "preview": "invoices/holdout-027.jpg"
+  },
+  {
+   "id": "holdout-028",
+   "set": "holdout",
+   "render": "pdf",
+   "layout": "compact",
+   "scenario": "price_mismatch",
+   "supplier": "Gitnang Luzon Noodle Supply Inc.",
+   "number": "GLN-24937",
+   "total": 42788.48,
+   "true_po": "P00084",
+   "matched_po": "P00084",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "Price of NDL-003 raised: ₱950.40 vs PO ₱864.00"
+   ],
+   "agent": [
+    "Instant Mami Chicken 55g (box of 72): billed ₱950.40/unit, PO price is ₱864.00."
+   ],
+   "read_ok": true,
+   "seconds": 2.44,
+   "api_error": false,
+   "preview": "invoices/holdout-028.jpg"
+  },
+  {
+   "id": "holdout-029",
+   "set": "holdout",
+   "render": "pdf",
+   "layout": "classic",
+   "scenario": "clean",
+   "supplier": "Malolos Rice & Grains Co.",
+   "number": "INV/2026/23382",
+   "total": 132944.0,
+   "true_po": "P00083",
+   "matched_po": "P00083",
+   "expected": "ready",
+   "got": "ready",
+   "correct": true,
+   "planted": [],
+   "agent": [],
+   "read_ok": true,
+   "seconds": 2.57,
+   "api_error": false,
+   "preview": "invoices/holdout-029.jpg"
+  },
+  {
+   "id": "holdout-030",
+   "set": "holdout",
+   "render": "scan",
+   "layout": "statement",
+   "scenario": "duplicate_invoice",
+   "supplier": "Batangas Coffee & Creamer Trading",
+   "number": "BCC-24862",
+   "total": 34675.2,
+   "true_po": "P00056",
+   "matched_po": "P00056",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "Price of COF-002 raised: ₱1,584.00 vs PO ₱1,440.00",
+    "Duplicate of holdout-002"
+   ],
+   "agent": [
+    "Batangas Coffee & Creamer Trading invoice BCC-24862 was already received. Possible double payment.",
+    "Instant Coffee Classic 50g (case of 24): billed ₱1,584.00/unit, PO price is ₱1,440.00."
+   ],
+   "read_ok": true,
+   "seconds": 2.38,
+   "api_error": false,
+   "preview": "invoices/holdout-030.jpg"
+  },
+  {
+   "id": "holdout-031",
+   "set": "holdout",
+   "render": "photo",
+   "layout": "classic",
+   "scenario": "two errors",
+   "supplier": "Malolos Rice & Grains Co.",
+   "number": "INV/2026/23411",
+   "total": 208740.0,
+   "true_po": "P00067",
+   "matched_po": "P00067",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "Over-billed GRN-002: billed 60, received 50",
+    "PO reference left off the invoice"
+   ],
+   "agent": [
+    "No PO reference on the invoice. Best match by items and quantities: P00067.",
+    "Premium Jasmine Rice 25kg (sack): billed 60, only 50 received."
+   ],
+   "read_ok": true,
+   "seconds": 2.74,
+   "api_error": false,
+   "preview": "invoices/holdout-031.jpg"
+  },
+  {
+   "id": "holdout-032",
+   "set": "holdout",
+   "render": "photo",
+   "layout": "classic",
+   "scenario": "duplicate_invoice",
+   "supplier": "Malolos Rice & Grains Co.",
+   "number": "INV/2026/23382",
+   "total": 132944.0,
+   "true_po": "P00083",
+   "matched_po": "P00083",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "Duplicate of holdout-029"
+   ],
+   "agent": [
+    "Malolos Rice & Grains Co. invoice INV/2026/23382 was already received. Possible double payment."
+   ],
+   "read_ok": true,
+   "seconds": 3.6,
+   "api_error": false,
+   "preview": "invoices/holdout-032.jpg"
+  },
+  {
+   "id": "holdout-033",
+   "set": "holdout",
+   "render": "photo",
+   "layout": "compact",
+   "scenario": "over_billed_qty",
+   "supplier": "Gitnang Luzon Noodle Supply Inc.",
+   "number": "GLN-24969",
+   "total": 66528.0,
+   "true_po": "P00118",
+   "matched_po": "P00118",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "Over-billed NDL-001: billed 30, received 25"
+   ],
+   "agent": [
+    "Pancit Canton Kalamansi 60g (box of 72): billed 30, only 25 received."
+   ],
+   "read_ok": true,
+   "seconds": 2.84,
+   "api_error": false,
+   "preview": "invoices/holdout-033.jpg"
+  },
+  {
+   "id": "holdout-034",
+   "set": "holdout",
+   "render": "photo",
+   "layout": "compact",
+   "scenario": "clean",
+   "supplier": "Gitnang Luzon Noodle Supply Inc.",
+   "number": "GLN-24975",
+   "total": 63851.2,
+   "true_po": "P00011",
+   "matched_po": "P00011",
+   "expected": "ready",
+   "got": "ready",
+   "correct": true,
+   "planted": [],
+   "agent": [],
+   "read_ok": true,
+   "seconds": 2.9,
+   "api_error": false,
+   "preview": "invoices/holdout-034.jpg"
+  },
+  {
+   "id": "holdout-035",
+   "set": "holdout",
+   "render": "pdf",
+   "layout": "compact",
+   "scenario": "unknown_item",
+   "supplier": "Laguna Dairy & Bakery Supply",
+   "number": "INV/2026/21246",
+   "total": 50041.6,
+   "true_po": "P00119",
+   "matched_po": "P00119",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "Added an item not on the PO: White Loaf 450g x20"
+   ],
+   "agent": [
+    "'White Loaf 450g x20' is billed but isn't on P00119."
+   ],
+   "read_ok": true,
+   "seconds": 2.79,
+   "api_error": false,
+   "preview": "invoices/holdout-035.jpg"
+  },
+  {
+   "id": "holdout-036",
+   "set": "holdout",
+   "render": "scan",
+   "layout": "compact",
+   "scenario": "clean",
+   "supplier": "Laguna Dairy & Bakery Supply",
+   "number": "INV/2026/21260",
+   "total": 76316.8,
+   "true_po": "P00007",
+   "matched_po": "P00007",
+   "expected": "ready",
+   "got": "ready",
+   "correct": true,
+   "planted": [],
+   "agent": [],
+   "read_ok": true,
+   "seconds": 2.75,
+   "api_error": false,
+   "preview": "invoices/holdout-036.jpg"
+  },
+  {
+   "id": "holdout-037",
+   "set": "holdout",
+   "render": "pdf",
+   "layout": "compact",
+   "scenario": "over_billed_qty",
+   "supplier": "Tarlac Household Care Supply",
+   "number": "022917",
+   "total": 142222.08,
+   "true_po": "P00081",
+   "matched_po": "P00081",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "Over-billed HHC-002: billed 17, received 15"
+   ],
+   "agent": [
+    "Fabric Conditioner 22ml (pack of 72): billed 17, only 15 received."
+   ],
+   "read_ok": true,
+   "seconds": 2.77,
+   "api_error": false,
+   "preview": "invoices/holdout-037.jpg"
+  },
+  {
+   "id": "holdout-038",
+   "set": "holdout",
+   "render": "scan",
+   "layout": "statement",
+   "scenario": "over_billed_qty",
+   "supplier": "Batangas Coffee & Creamer Trading",
+   "number": "BCC-24945",
+   "total": 92067.36,
+   "true_po": "P00036",
+   "matched_po": "P00036",
+   "expected": "needs_review",
+   "got": "needs_review",
+   "correct": true,
+   "planted": [
+    "Over-billed COF-003: billed 7, received 5"
+   ],
+   "agent": [
+    "Powdered Creamer 170g (case of 24): billed 7, only 5 received."
+   ],
+   "read_ok": true,
+   "seconds": 3.68,
+   "api_error": false,
+   "preview": "invoices/holdout-038.jpg"
+  },
+  {
+   "id": "holdout-039",
+   "set": "holdout",
+   "render": "photo",
+   "layout": "compact",
+   "scenario": "clean",
+   "supplier": "Gitnang Luzon Noodle Supply Inc.",
+   "number": "GLN-24978",
+   "total": 49515.2,
+   "true_po": "P00010",
+   "matched_po": "P00010",
+   "expected": "ready",
+   "got": "ready",
+   "correct": true,
+   "planted": [],
+   "agent": [],
+   "read_ok": true,
+   "seconds": 3.79,
+   "api_error": false,
+   "preview": "invoices/holdout-039.jpg"
+  },
+  {
+   "id": "holdout-040",
+   "set": "holdout",
+   "render": "pdf",
+   "layout": "compact",
+   "scenario": "clean",
+   "supplier": "Tarlac Household Care Supply",
+   "number": "022945",
+   "total": 49324.8,
+   "true_po": "P00066",
+   "matched_po": "P00066",
+   "expected": "ready",
+   "got": "ready",
+   "correct": true,
+   "planted": [],
+   "agent": [],
+   "read_ok": true,
+   "seconds": 3.74,
+   "api_error": false,
+   "preview": "invoices/holdout-040.jpg"
+  }
+ ]
+}
