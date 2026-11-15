@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ExtractedInvoice",
+  "description": "What the LLM reads from one supplier invoice. Draft v0. Amounts are numbers in PHP; matching is done in code, not by the LLM.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["supplier_name", "supplier_tin", "invoice_number", "invoice_date", "po_number", "currency", "lines", "subtotal", "vat", "total", "unreadable_fields"],
+  "properties": {
+    "supplier_name": { "type": "string" },
+    "supplier_tin": { "type": ["string", "null"], "description": "Taxpayer Identification Number as printed, or null" },
+    "invoice_number": { "type": ["string", "null"] },
+    "invoice_date": { "type": ["string", "null"], "description": "YYYY-MM-DD" },
+    "po_number": { "type": ["string", "null"], "description": "PO reference as printed; null if absent" },
+    "currency": { "type": "string", "default": "PHP" },
+    "lines": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["description", "supplier_code", "quantity", "unit", "unit_price", "line_total"],
+        "properties": {
+          "description": { "type": "string" },
+          "supplier_code": { "type": ["string", "null"], "description": "Supplier's own item code, if printed" },
+          "quantity": { "type": "number" },
+          "unit": { "type": ["string", "null"], "description": "e.g. pc, case, box, kg" },
+          "unit_price": { "type": "number" },
+          "line_total": { "type": "number" }
+        }
+      }
+    },
+    "subtotal": { "type": ["number", "null"] },
+    "vat": { "type": ["number", "null"] },
+    "total": { "type": ["number", "null"] },
+    "unreadable_fields": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Fields the model could not read with confidence; these force a review"
+    }
+  }
+}
