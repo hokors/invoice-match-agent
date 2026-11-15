@@ -1,0 +1,39 @@
+{
+  "extraction": {
+    "supplier_name": "PAMPANGA BEVERAGE TRADING CORP.",
+    "supplier_tin": "201-334-118-00000",
+    "invoice_number": "002739",
+    "invoice_date": "2026-09-23",
+    "po_number": "P00069",
+    "currency": "PHP",
+    "lines": [
+      {
+        "supplier_code": "PBT-LIT1-12",
+        "description": "Lemon Iced Tea 1L x12",
+        "quantity": 20,
+        "unit": "case",
+        "unit_price": 621.0,
+        "line_total": 12420.0
+      },
+      {
+        "supplier_code": "PBT-OR15-12",
+        "description": "Orange Sparkling 1.5L x12",
+        "quantity": 5,
+        "unit": "case",
+        "unit_price": 760.0,
+        "line_total": 3800.0
+      }
+    ],
+    "subtotal": 16220.0,
+    "vat": 1946.4,
+    "total": 18166.4,
+    "unreadable_fields": []
+  },
+  "meta": {
+    "model": "gemini-3.5-flash-lite",
+    "seconds": 2.46,
+    "input_tokens": 1540,
+    "output_tokens": 344,
+    "attempts": 1
+  }
+}

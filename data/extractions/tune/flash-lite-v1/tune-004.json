@@ -1,0 +1,47 @@
+{
+  "extraction": {
+    "supplier_name": "Tarlac Household Care Supply",
+    "supplier_tin": "240-662-381-00000",
+    "invoice_number": "003201",
+    "invoice_date": "2026-10-03",
+    "po_number": "P00059",
+    "currency": "PHP",
+    "lines": [
+      {
+        "supplier_code": null,
+        "description": "Beauty Soap 90g x72",
+        "quantity": 5,
+        "unit": "box",
+        "unit_price": 1872.0,
+        "line_total": 9360.0
+      },
+      {
+        "supplier_code": null,
+        "description": "Detergent Powder 66g x72",
+        "quantity": 10,
+        "unit": "pack",
+        "unit_price": 648.0,
+        "line_total": 6480.0
+      },
+      {
+        "supplier_code": null,
+        "description": "Dishwash Liquid 250ml x24",
+        "quantity": 40,
+        "unit": "case",
+        "unit_price": 912.0,
+        "line_total": 36480.0
+      }
+    ],
+    "subtotal": 52320.0,
+    "vat": 6278.4,
+    "total": 58598.4,
+    "unreadable_fields": []
+  },
+  "meta": {
+    "model": "gemini-3.5-flash-lite",
+    "seconds": 2.06,
+    "input_tokens": 1008,
+    "output_tokens": 403,
+    "attempts": 1
+  }
+}

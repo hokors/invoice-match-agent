@@ -1,0 +1,39 @@
+{
+  "extraction": {
+    "supplier_name": "PANGASINAN SNACKS CORP.",
+    "supplier_tin": "266-845-210-00000",
+    "invoice_number": "SI-2026-03742",
+    "invoice_date": "2026-08-21",
+    "po_number": "P00031",
+    "currency": "PHP",
+    "lines": [
+      {
+        "supplier_code": "PSC-CH50-24",
+        "description": "Chicharon Hot & Spicy 50g x24",
+        "quantity": 50.0,
+        "unit": "case",
+        "unit_price": 630.0,
+        "line_total": 31500.0
+      },
+      {
+        "supplier_code": "PSC-PC60-24",
+        "description": "Potato Crisps Orig 60g x24",
+        "quantity": 5.0,
+        "unit": "case",
+        "unit_price": 696.0,
+        "line_total": 3480.0
+      }
+    ],
+    "subtotal": 34980.0,
+    "vat": 4197.6,
+    "total": 39177.6,
+    "unreadable_fields": []
+  },
+  "meta": {
+    "model": "gemini-3.5-flash-lite",
+    "seconds": 1.97,
+    "input_tokens": 1008,
+    "output_tokens": 347,
+    "attempts": 1
+  }
+}

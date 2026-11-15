@@ -97,7 +97,7 @@ class InvoiceFactory:
         self.next_number[sup.id] = n + self.rng.randint(1, 37)
         style = sup.id % 4
         year = po.date_order[:4]
-        return [f"SI-{year}-{n:05d}", f"INV/{year}/{n}", f"No. {n:06d}", f"{sup.ref}-{n}"][style]
+        return [f"SI-{year}-{n:05d}", f"INV/{year}/{n}", f"{n:06d}", f"{sup.ref}-{n}"][style]
 
     def _invoice_date(self, po: PurchaseOrder) -> str:
         base = po.receipt_date or (date.fromisoformat(po.date_order) + timedelta(days=3)).isoformat()

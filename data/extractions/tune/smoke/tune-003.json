@@ -1,0 +1,39 @@
+{
+  "extraction": {
+    "supplier_name": "PANGASINAN SNACKS CORP.",
+    "supplier_tin": "266-845-210-00000",
+    "invoice_number": "SI-2026-03714",
+    "invoice_date": "2026-08-22",
+    "po_number": "P00080",
+    "currency": "PHP",
+    "lines": [
+      {
+        "supplier_code": "PSC-CH50-24",
+        "description": "Chicharon Hot & Spicy 50g x24",
+        "quantity": 10,
+        "unit": "case",
+        "unit_price": 600.0,
+        "line_total": 6000.0
+      },
+      {
+        "supplier_code": "PSC-CS100-24",
+        "description": "Corn Snack BBQ 100g x24",
+        "quantity": 20,
+        "unit": "case",
+        "unit_price": 840.0,
+        "line_total": 16800.0
+      }
+    ],
+    "subtotal": 22800.0,
+    "vat": 2736.0,
+    "total": 25536.0,
+    "unreadable_fields": []
+  },
+  "meta": {
+    "model": "gemini-3.5-flash-lite",
+    "seconds": 2.76,
+    "input_tokens": 1568,
+    "output_tokens": 346,
+    "attempts": 1
+  }
+}

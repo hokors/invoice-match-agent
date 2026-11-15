@@ -1,0 +1,47 @@
+{
+  "extraction": {
+    "supplier_name": "Bulacan Canned Goods Distributors",
+    "supplier_tin": "228-510-976-00000",
+    "invoice_number": "SI-2026-02136",
+    "invoice_date": "2026-09-12",
+    "po_number": "P00029",
+    "currency": "PHP",
+    "lines": [
+      {
+        "supplier_code": "BCG-SR155-100",
+        "description": "Sardinas Tomato 155g x100",
+        "quantity": 40,
+        "unit": "case",
+        "unit_price": 2150.0,
+        "line_total": 86000.0
+      },
+      {
+        "supplier_code": "BCG-ML150-48",
+        "description": "Meatloaf 150g x48",
+        "quantity": 5,
+        "unit": "case",
+        "unit_price": 1392.0,
+        "line_total": 6960.0
+      },
+      {
+        "supplier_code": "BCG-CB150-48",
+        "description": "Corned Beef 150g x48",
+        "quantity": 10,
+        "unit": "case",
+        "unit_price": 1920.0,
+        "line_total": 19200.0
+      }
+    ],
+    "subtotal": 112160.0,
+    "vat": 13459.2,
+    "total": 125619.2,
+    "unreadable_fields": []
+  },
+  "meta": {
+    "model": "gemini-3.5-flash-lite",
+    "seconds": 3.09,
+    "input_tokens": 1008,
+    "output_tokens": 449,
+    "attempts": 1
+  }
+}

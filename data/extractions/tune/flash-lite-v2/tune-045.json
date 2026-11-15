@@ -1,0 +1,55 @@
+{
+  "extraction": {
+    "supplier_name": "Bulacan Canned Goods Distributors",
+    "supplier_tin": "228-510-976-00000",
+    "invoice_number": "SI-2026-02197",
+    "invoice_date": "2026-10-08",
+    "po_number": "P00070",
+    "currency": "PHP",
+    "lines": [
+      {
+        "supplier_code": "BCG-TF180-48",
+        "description": "Tuna Flakes Oil 180g x48",
+        "quantity": 18,
+        "unit": "case",
+        "unit_price": 1680.0,
+        "line_total": 30240.0
+      },
+      {
+        "supplier_code": "BCG-ML150-48",
+        "description": "Meatloaf 150g x48",
+        "quantity": 40,
+        "unit": "case",
+        "unit_price": 1600.8,
+        "line_total": 64032.0
+      },
+      {
+        "supplier_code": "BCG-SR155-100",
+        "description": "Sardinas Tomato 155g x100",
+        "quantity": 15,
+        "unit": "case",
+        "unit_price": 2150.0,
+        "line_total": 32250.0
+      },
+      {
+        "supplier_code": "BCG-CB150-48",
+        "description": "Corned Beef 150g x48",
+        "quantity": 8,
+        "unit": "case",
+        "unit_price": 1920.0,
+        "line_total": 15360.0
+      }
+    ],
+    "subtotal": 141882.0,
+    "vat": 17025.84,
+    "total": 158907.84,
+    "unreadable_fields": []
+  },
+  "meta": {
+    "model": "gemini-3.5-flash-lite",
+    "seconds": 2.59,
+    "input_tokens": 1638,
+    "output_tokens": 535,
+    "attempts": 1
+  }
+}

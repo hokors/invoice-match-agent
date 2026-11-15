@@ -106,11 +106,26 @@ python -m generator.generate --set holdout --count 40
 Needs the sandbox running and `pip install -r requirements.txt`. Output goes to `data/invoices/` (not committed;
 the same seeds always rebuild the same invoices from the same sandbox).
 
+## Extraction results (tuning set)
+
+Gemini Flash-Lite reads each invoice (PDF or image) into [`schema/invoice.schema.json`](schema/invoice.schema.json)
+using [`prompts/extract_invoice.md`](prompts/extract_invoice.md). Scored field by field against the answer keys
+with [`evals/extraction.py`](evals/extraction.py).
+
+| Run | Invoices fully correct | All numbers correct | PDF | Scan | Photo | Median latency |
+|---|---|---|---|---|---|---|
+| Prompt v1 | 83% (50/60) | 98% | 85% | 78% | 90% | 2.6 s |
+| Prompt v2 (PH date rule) | **95% (57/60)** | 97% | **100%** | 91% | 90% | 2.3 s |
+
+Nine of the ten v1 misses were the same bug: dates printed as MM/DD/YYYY read as day/month. Two of the three v2
+misses are API timeouts, not reading mistakes. Details in [`docs/eval_runs/`](docs/eval_runs/) and
+[`docs/failure_log.md`](docs/failure_log.md). The held-out set is kept untouched for the final end-to-end score.
+
 ## Milestones
 
 - [x] **Odoo sandbox:** Odoo 19 + Postgres in Docker, JSON-2 API, and Lakan Distribution's data: PH chart of accounts, PHP, 12% VAT, 8 suppliers, 32 products, 30 POs (16 fully received, 8 partial with backorders, 6 not yet received)
 - [x] **Invoice generator:** 60 tuning + 40 held-out invoices from real sandbox POs, 3 supplier layouts, clean PDF / scan / phone-photo versions, planted errors with answer keys
-- [ ] **Extraction:** invoice → JSON, scored per field
+- [x] **Extraction:** invoice → JSON with Gemini, scored per field (tuning set: 95% of invoices fully correct)
 - [ ] **Matching engine:** PO lookup, line matching, issue detection (rules + LLM only where needed)
 - [ ] **Write-back:** draft vendor bills in Odoo with the explanation attached
 - [ ] **Evaluation:** tuning and held-out runs

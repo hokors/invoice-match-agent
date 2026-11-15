@@ -1,0 +1,39 @@
+{
+  "extraction": {
+    "supplier_name": "MALOLOS RICE & GRAINS CO.",
+    "supplier_tin": "233-128-604-00000",
+    "invoice_number": "INV/2026/2517",
+    "invoice_date": "2026-08-28",
+    "po_number": "P00005",
+    "currency": "PHP",
+    "lines": [
+      {
+        "supplier_code": "MRG-WMR25",
+        "description": "WMR Rice 25kg sack",
+        "quantity": 25,
+        "unit": "sack",
+        "unit_price": 1225.0,
+        "line_total": 30625.0
+      },
+      {
+        "supplier_code": "MRG-JAS25",
+        "description": "Jasmine Rice Premium 25kg",
+        "quantity": 5,
+        "unit": "sack",
+        "unit_price": 1550.0,
+        "line_total": 7750.0
+      }
+    ],
+    "subtotal": 38375.0,
+    "vat": 4605.0,
+    "total": 42980.0,
+    "unreadable_fields": []
+  },
+  "meta": {
+    "model": "gemini-3.5-flash-lite",
+    "seconds": 2.16,
+    "input_tokens": 1638,
+    "output_tokens": 342,
+    "attempts": 1
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "extraction": {
+    "supplier_name": "Tarlac Household Care Supply",
+    "supplier_tin": "240-662-381-00000",
+    "invoice_number": "003273",
+    "invoice_date": "2026-11-08",
+    "po_number": null,
+    "currency": "PHP",
+    "lines": [
+      {
+        "supplier_code": null,
+        "description": "Detergent Powder 66g x72",
+        "quantity": 25,
+        "unit": "pack",
+        "unit_price": 648.0,
+        "line_total": 16200.0
+      },
+      {
+        "supplier_code": null,
+        "description": "Beauty Soap 90g x72",
+        "quantity": 40,
+        "unit": "box",
+        "unit_price": 2152.8,
+        "line_total": 86112.0
+      }
+    ],
+    "subtotal": 102312.0,
+    "vat": 12277.44,
+    "total": 114589.44,
+    "unreadable_fields": []
+  },
+  "meta": {
+    "model": "gemini-3.5-flash-lite",
+    "seconds": 2.97,
+    "input_tokens": 1008,
+    "output_tokens": 322,
+    "attempts": 1
+  }
+}

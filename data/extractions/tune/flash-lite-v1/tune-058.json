@@ -1,0 +1,47 @@
+{
+  "extraction": {
+    "supplier_name": "PANGASINAN SNACKS CORP.",
+    "supplier_tin": "266-845-210-00000",
+    "invoice_number": "SI-2026-03884",
+    "invoice_date": "2026-10-11",
+    "po_number": "P00074",
+    "currency": "PHP",
+    "lines": [
+      {
+        "supplier_code": "PSC-PC60-24",
+        "description": "Potato Crisps Orig 60g x24",
+        "quantity": 40,
+        "unit": "case",
+        "unit_price": 696.0,
+        "line_total": 27840.0
+      },
+      {
+        "supplier_code": "PSC-CS100-24",
+        "description": "Corn Snack BBQ 100g x24",
+        "quantity": 20,
+        "unit": "case",
+        "unit_price": 840.0,
+        "line_total": 17050.0
+      },
+      {
+        "supplier_code": "PSC-CC30-50",
+        "description": "Cheese Crackers 30g x50",
+        "quantity": 6,
+        "unit": "pack",
+        "unit_price": 350.0,
+        "line_total": 2100.0
+      }
+    ],
+    "subtotal": 46990.0,
+    "vat": 5638.8,
+    "total": 52628.8,
+    "unreadable_fields": []
+  },
+  "meta": {
+    "model": "gemini-3.5-flash-lite",
+    "seconds": 1.79,
+    "input_tokens": 1008,
+    "output_tokens": 437,
+    "attempts": 2
+  }
+}

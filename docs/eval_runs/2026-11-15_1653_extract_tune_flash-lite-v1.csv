@@ -1,0 +1,61 @@
+invoice_id,render,layout,all_ok,numbers_ok,model,seconds,error,mistakes
+tune-001,scan,statement,True,True,gemini-3.5-flash-lite,1.9,,
+tune-002,scan,compact,True,True,gemini-3.5-flash-lite,2.23,,
+tune-003,scan,classic,True,True,gemini-3.5-flash-lite,1.85,,
+tune-004,pdf,compact,True,True,gemini-3.5-flash-lite,2.06,,
+tune-005,pdf,statement,True,True,gemini-3.5-flash-lite,2.0,,
+tune-006,photo,statement,True,True,gemini-3.5-flash-lite,2.55,,
+tune-007,photo,statement,True,True,gemini-3.5-flash-lite,2.86,,
+tune-008,photo,statement,True,True,gemini-3.5-flash-lite,2.15,,
+tune-009,scan,compact,True,True,gemini-3.5-flash-lite,3.49,,
+tune-010,scan,classic,False,True,gemini-3.5-flash-lite,2.62,,"invoice_date: expected '2026-11-06', got '2026-06-11'"
+tune-011,pdf,classic,True,True,gemini-3.5-flash-lite,2.09,,
+tune-012,scan,classic,True,True,gemini-3.5-flash-lite,3.03,,
+tune-013,photo,compact,True,True,gemini-3.5-flash-lite,2.39,,
+tune-014,pdf,compact,True,True,gemini-3.5-flash-lite,2.16,,
+tune-015,pdf,statement,True,True,gemini-3.5-flash-lite,3.01,,
+tune-016,photo,classic,True,True,gemini-3.5-flash-lite,2.46,,
+tune-017,pdf,classic,True,True,gemini-3.5-flash-lite,1.87,,
+tune-018,pdf,classic,True,True,gemini-3.5-flash-lite,1.97,,
+tune-019,scan,compact,True,True,gemini-3.5-flash-lite,2.68,,
+tune-020,scan,classic,True,True,gemini-3.5-flash-lite,3.02,,
+tune-021,pdf,compact,True,True,gemini-3.5-flash-lite,1.82,,
+tune-022,pdf,statement,True,True,gemini-3.5-flash-lite,3.09,,
+tune-023,scan,classic,False,True,gemini-3.5-flash-lite,1.84,,"invoice_date: expected '2026-11-05', got '2026-05-11'"
+tune-024,pdf,compact,True,True,gemini-3.5-flash-lite,2.97,,
+tune-025,scan,classic,False,True,gemini-3.5-flash-lite,2.56,,"invoice_date: expected '2026-09-05', got '2026-05-09'"
+tune-026,scan,statement,True,True,gemini-3.5-flash-lite,2.82,,
+tune-027,photo,classic,True,True,gemini-3.5-flash-lite,2.86,,
+tune-028,pdf,classic,True,True,gemini-3.5-flash-lite,2.86,,
+tune-029,pdf,statement,True,True,gemini-3.5-flash-lite,2.31,,
+tune-030,photo,classic,True,True,gemini-3.5-flash-lite,2.96,,
+tune-031,pdf,statement,True,True,gemini-3.5-flash-lite,2.23,,
+tune-032,scan,classic,True,True,gemini-3.5-flash-lite,3.02,,
+tune-033,pdf,classic,False,True,gemini-3.5-flash-lite,2.39,,"invoice_date: expected '2026-10-03', got '2026-03-10'"
+tune-034,scan,compact,True,True,gemini-3.5-flash-lite,2.74,,
+tune-035,scan,statement,True,True,gemini-3.5-flash-lite,3.52,,
+tune-036,pdf,statement,True,True,gemini-3.5-flash-lite,2.4,,
+tune-037,pdf,compact,True,True,gemini-3.5-flash-lite,2.42,,
+tune-038,pdf,compact,True,True,gemini-3.5-flash-lite,5.55,,
+tune-039,scan,classic,True,True,gemini-3.5-flash-lite,2.68,,
+tune-040,scan,compact,False,False,-,0,all models failed after 4 attempts; last error: gemini-flash-latest: TimeoutError The read operation timed out,"supplier_name: expected 'Tarlac Household Care Supply', got None | supplier_tin: expected '240-662-381-00000', got None | invoice_number: expected '003273', got None | invoice_date: expected '2026-11-08', got None | subtotal: expected 102312.0, got None | vat: expected 12277.44, got None | total: expected 114589.44, got None | line_count: expected 2, got 0 | lines[0].description: expected 'Detergent Powder 66g x72', got None | lines[0].quantity: expected 25.0, got None | lines[0].unit: expected 'pack', got None | lines[0].unit_price: expected 648.0, got None | lines[0].line_total: expected 16200.0, got None | lines[1].description: expected 'Beauty Soap 90g x72', got None | lines[1].quantity: expected 40.0, got None | lines[1].unit: expected 'box', got None | lines[1].unit_price: expected 2152.8, got None | lines[1].line_total: expected 86112.0, got None"
+tune-041,photo,classic,True,True,gemini-3.5-flash-lite,2.51,,
+tune-042,pdf,statement,True,True,gemini-3.5-flash-lite,2.16,,
+tune-043,pdf,classic,False,True,gemini-3.5-flash-lite,3.37,,"invoice_date: expected '2026-10-03', got '2026-03-10'"
+tune-044,scan,statement,True,True,gemini-3.5-flash-lite,4.89,,
+tune-045,scan,statement,True,True,gemini-3.5-flash-lite,2.61,,
+tune-046,pdf,classic,True,True,gemini-3.5-flash-lite,2.84,,
+tune-047,scan,compact,True,True,gemini-3.5-flash-lite,2.82,,
+tune-048,pdf,classic,False,True,gemini-3.5-flash-lite,2.1,,"invoice_date: expected '2026-10-09', got '2026-09-10'"
+tune-049,scan,classic,True,True,gemini-3.5-flash-lite,3.57,,
+tune-050,scan,compact,True,True,gemini-3.5-flash-lite,2.56,,
+tune-051,pdf,statement,True,True,gemini-3.5-flash-lite,1.82,,
+tune-052,pdf,classic,False,True,gemini-3.5-flash-lite,1.96,,"invoice_date: expected '2026-11-04', got '2026-04-11'"
+tune-053,pdf,compact,True,True,gemini-3.5-flash-lite,2.04,,
+tune-054,pdf,compact,True,True,gemini-3.5-flash-lite,2.59,,
+tune-055,scan,classic,False,True,gemini-3.5-flash-lite,3.67,,"invoice_date: expected '2026-10-11', got '2026-11-10'"
+tune-056,scan,compact,True,True,gemini-3.5-flash-lite,2.81,,
+tune-057,photo,classic,False,True,gemini-3.5-flash-lite,2.49,,"invoice_date: expected '2026-11-04', got '2026-04-11'"
+tune-058,pdf,classic,True,True,gemini-3.5-flash-lite,1.79,,
+tune-059,photo,compact,True,True,gemini-3.5-flash-lite,2.26,,
+tune-060,pdf,statement,True,True,gemini-3.5-flash-lite,4.52,,

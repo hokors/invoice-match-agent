@@ -1,0 +1,39 @@
+{
+  "extraction": {
+    "supplier_name": "Batangas Coffee & Creamer Trading",
+    "supplier_tin": "252-019-737-00000",
+    "invoice_number": "BCC-3335",
+    "invoice_date": "2026-09-15",
+    "po_number": null,
+    "currency": "PHP",
+    "lines": [
+      {
+        "supplier_code": "BCC-CR170-24",
+        "description": "Creamer Powder 170g x24",
+        "quantity": 40,
+        "unit": "case",
+        "unit_price": 1104.0,
+        "line_total": 44160.0
+      },
+      {
+        "supplier_code": "BCC-CM20-30",
+        "description": "Coffee Mix Original 20g x30",
+        "quantity": 5,
+        "unit": "pack",
+        "unit_price": 165.0,
+        "line_total": 825.0
+      }
+    ],
+    "subtotal": 44985.0,
+    "vat": 5398.2,
+    "total": 50383.2,
+    "unreadable_fields": []
+  },
+  "meta": {
+    "model": "gemini-3.5-flash-lite",
+    "seconds": 2.62,
+    "input_tokens": 1078,
+    "output_tokens": 331,
+    "attempts": 1
+  }
+}

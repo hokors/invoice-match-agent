@@ -1,0 +1,39 @@
+{
+  "extraction": {
+    "supplier_name": "PANGASINAN SNACKS CORP.",
+    "supplier_tin": "266-845-210-00000",
+    "invoice_number": "SI-2026-03857",
+    "invoice_date": "2026-09-10",
+    "po_number": "P00072",
+    "currency": "PHP",
+    "lines": [
+      {
+        "supplier_code": "PSC-CH50-24",
+        "description": "Chicharon Hot & Spicy 50g x24",
+        "quantity": 30,
+        "unit": "case",
+        "unit_price": 600.0,
+        "line_total": 18000.0
+      },
+      {
+        "supplier_code": "PSC-CC30-50",
+        "description": "Cheese Crackers 30g x50",
+        "quantity": 50,
+        "unit": "pack",
+        "unit_price": 350.0,
+        "line_total": 17500.0
+      }
+    ],
+    "subtotal": 35500.0,
+    "vat": 4260.0,
+    "total": 39760.0,
+    "unreadable_fields": []
+  },
+  "meta": {
+    "model": "gemini-3.5-flash-lite",
+    "seconds": 2.1,
+    "input_tokens": 1008,
+    "output_tokens": 351,
+    "attempts": 2
+  }
+}
