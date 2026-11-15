@@ -1,0 +1,47 @@
+{
+  "extraction": {
+    "supplier_name": "Laguna Dairy & Bakery Supply",
+    "supplier_tin": "271-390-558-00000",
+    "invoice_number": "INV/2026/21235",
+    "invoice_date": "2026-10-20",
+    "po_number": "P00012",
+    "currency": "PHP",
+    "lines": [
+      {
+        "supplier_code": null,
+        "description": "Evap Milk 370ml x48",
+        "quantity": 11,
+        "unit": "case",
+        "unit_price": 1728.0,
+        "line_total": 19008.0
+      },
+      {
+        "supplier_code": null,
+        "description": "Sweetened Condensed 300ml x48",
+        "quantity": 15,
+        "unit": "case",
+        "unit_price": 2304.0,
+        "line_total": 34560.0
+      },
+      {
+        "supplier_code": null,
+        "description": "Milk Powder Sachet 33g x72",
+        "quantity": 12,
+        "unit": "pack",
+        "unit_price": 1080.0,
+        "line_total": 12960.0
+      }
+    ],
+    "subtotal": 66528.0,
+    "vat": 7983.36,
+    "total": 74511.36,
+    "unreadable_fields": []
+  },
+  "meta": {
+    "model": "gemini-3.5-flash-lite",
+    "seconds": 7.86,
+    "input_tokens": 1638,
+    "output_tokens": 416,
+    "attempts": 1
+  }
+}

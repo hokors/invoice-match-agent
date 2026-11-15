@@ -1,0 +1,41 @@
+invoice_id,render,scenario,expected,got,true_po,matched_po,missed,extra,messages
+holdout-001,pdf,math_error,needs_review,needs_review,P00014,P00014,,,"Subtotal + VAT = ₱85,814.40, invoice total says ₱85,314.40."
+holdout-002,photo,price_mismatch,needs_review,needs_review,P00056,P00056,,,"Instant Coffee Classic 50g (case of 24): billed ₱1,584.00/unit, PO price is ₱1,440.00."
+holdout-003,pdf,wrong_po_ref,needs_review,needs_review,P00035,P00035,,,"Invoice cites PO P00011, but its items and quantities match P00035."
+holdout-004,scan,combo:missing_po_ref+price_mismatch,needs_review,needs_review,P00089,P00089,,,"No PO reference on the invoice. Best match by items and quantities: P00089. | Chicharon Spicy 50g (case of 24): billed ₱690.00/unit, PO price is ₱600.00."
+holdout-005,pdf,not_received,needs_review,needs_review,P00075,P00075,,,Nothing on P00075 has been received yet; don't pay before the goods arrive.
+holdout-006,pdf,price_mismatch,needs_review,needs_review,P00099,P00099,,,"Cola 1.5L (case of 12): billed ₱936.00/unit, PO price is ₱780.00."
+holdout-007,photo,clean,ready,ready,P00006,P00006,,,
+holdout-008,pdf,clean,ready,ready,P00042,P00042,,,
+holdout-009,scan,clean,ready,ready,P00077,P00077,,,
+holdout-010,scan,price_mismatch,needs_review,needs_review,P00019,P00019,,,"Evaporated Milk 370ml (case of 48): billed ₱1,900.80/unit, PO price is ₱1,728.00."
+holdout-011,scan,price_mismatch,needs_review,needs_review,P00015,P00015,,,"Bath Soap 90g (box of 72): billed ₱2,152.80/unit, PO price is ₱1,872.00."
+holdout-012,scan,clean,ready,ready,P00025,P00025,,,
+holdout-013,photo,unknown_item,needs_review,needs_review,P00044,P00044,,,'Canton Kalamansi 60g x72' is billed but isn't on P00044.
+holdout-014,pdf,over_billed_qty,needs_review,needs_review,P00105,P00105,,,"Pancit Canton Chilimansi 60g (box of 72): billed 10, only 6 received."
+holdout-015,pdf,not_received,needs_review,needs_review,P00053,P00053,,,Nothing on P00053 has been received yet; don't pay before the goods arrive.
+holdout-016,photo,over_billed_qty,needs_review,needs_review,P00114,P00114,,,"Pancit Canton Kalamansi 60g (box of 72): billed 20, only 10 received."
+holdout-017,pdf,math_error,needs_review,needs_review,P00045,P00045,,,"12% VAT on ₱97,000.00 is ₱11,640.00, invoice says ₱12,610.00."
+holdout-018,pdf,missing_po_ref,needs_review,needs_review,P00021,P00021,,,No PO reference on the invoice. Best match by items and quantities: P00021.
+holdout-019,pdf,clean,ready,ready,P00085,P00085,,,
+holdout-020,scan,missing_po_ref,needs_review,needs_review,P00038,P00038,,,No PO reference on the invoice. Best match by items and quantities: P00038.
+holdout-021,pdf,math_error,needs_review,needs_review,P00116,P00116,,,"12% VAT on ₱80,590.00 is ₱9,670.80, invoice says ₱10,476.70."
+holdout-022,photo,not_received,needs_review,needs_review,P00109,P00109,,,Nothing on P00109 has been received yet; don't pay before the goods arrive.
+holdout-023,pdf,clean,ready,needs_review,P00060,,,extraction_failed,The invoice couldn't be read. A person needs to enter it.
+holdout-024,pdf,unknown_item,needs_review,needs_review,P00049,P00049,,,'Delivery charge' is billed but isn't on P00049.
+holdout-025,scan,wrong_po_ref,needs_review,needs_review,P00009,P00009,,,"Invoice cites PO P00096, but its items and quantities match P00009."
+holdout-026,scan,clean,ready,ready,P00012,P00012,,,
+holdout-027,pdf,combo:over_billed_qty+unknown_item,needs_review,needs_review,P00065,P00065,,,"Evaporated Milk 370ml (case of 48): billed 42, only 40 received. | 'Delivery charge' is billed but isn't on P00065."
+holdout-028,pdf,price_mismatch,needs_review,needs_review,P00084,P00084,,,"Instant Mami Chicken 55g (box of 72): billed ₱950.40/unit, PO price is ₱864.00."
+holdout-029,pdf,clean,ready,ready,P00083,P00083,,,
+holdout-030,scan,duplicate_invoice,needs_review,needs_review,P00056,P00056,,,"Batangas Coffee & Creamer Trading invoice BCC-24862 was already received. Possible double payment. | Instant Coffee Classic 50g (case of 24): billed ₱1,584.00/unit, PO price is ₱1,440.00."
+holdout-031,photo,combo:over_billed_qty+missing_po_ref,needs_review,needs_review,P00067,P00067,,,"No PO reference on the invoice. Best match by items and quantities: P00067. | Premium Jasmine Rice 25kg (sack): billed 60, only 50 received."
+holdout-032,photo,duplicate_invoice,needs_review,needs_review,P00083,P00083,,,Malolos Rice & Grains Co. invoice INV/2026/23382 was already received. Possible double payment.
+holdout-033,photo,over_billed_qty,needs_review,needs_review,P00118,P00118,,,"Pancit Canton Kalamansi 60g (box of 72): billed 30, only 25 received."
+holdout-034,photo,clean,ready,ready,P00011,P00011,,,
+holdout-035,pdf,unknown_item,needs_review,needs_review,P00119,P00119,,,'White Loaf 450g x20' is billed but isn't on P00119.
+holdout-036,scan,clean,ready,ready,P00007,P00007,,,
+holdout-037,pdf,over_billed_qty,needs_review,needs_review,P00081,P00081,,,"Fabric Conditioner 22ml (pack of 72): billed 17, only 15 received."
+holdout-038,scan,over_billed_qty,needs_review,needs_review,P00036,P00036,,,"Powdered Creamer 170g (case of 24): billed 7, only 5 received."
+holdout-039,photo,clean,ready,ready,P00010,P00010,,,
+holdout-040,pdf,clean,ready,ready,P00066,P00066,,,

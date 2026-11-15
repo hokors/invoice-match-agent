@@ -1,0 +1,39 @@
+{
+  "extraction": {
+    "supplier_name": "Gitnang Luzon Noodle Supply Inc.",
+    "supplier_tin": "215-907-442-00000",
+    "invoice_number": "GLN-24880",
+    "invoice_date": "2026-08-25",
+    "po_number": "P00011",
+    "currency": "PHP",
+    "lines": [
+      {
+        "supplier_code": null,
+        "description": "Canton Kalamansi 60g x72",
+        "quantity": 30.0,
+        "unit": "box",
+        "unit_price": 1080.0,
+        "line_total": 32400.0
+      },
+      {
+        "supplier_code": null,
+        "description": "Canton Chilimansi 60g x72",
+        "quantity": 10.0,
+        "unit": "box",
+        "unit_price": 1080.0,
+        "line_total": 10800.0
+      }
+    ],
+    "subtotal": 43200.0,
+    "vat": 5184.0,
+    "total": 48384.0,
+    "unreadable_fields": []
+  },
+  "meta": {
+    "model": "gemini-3.5-flash-lite",
+    "seconds": 2.07,
+    "input_tokens": 1078,
+    "output_tokens": 329,
+    "attempts": 1
+  }
+}

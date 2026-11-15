@@ -1,0 +1,39 @@
+{
+  "extraction": {
+    "supplier_name": "Gitnang Luzon Noodle Supply Inc.",
+    "supplier_tin": "215-907-442-00000",
+    "invoice_number": "GLN-24978",
+    "invoice_date": "2026-09-12",
+    "po_number": "P00010",
+    "currency": "PHP",
+    "lines": [
+      {
+        "supplier_code": null,
+        "description": "Sotanghon 100g x50",
+        "quantity": 25,
+        "unit": "pack",
+        "unit_price": 1250.0,
+        "line_total": 31250.0
+      },
+      {
+        "supplier_code": null,
+        "description": "Chicken Mami Noodles 55g x72",
+        "quantity": 15,
+        "unit": "box",
+        "unit_price": 864.0,
+        "line_total": 12960.0
+      }
+    ],
+    "subtotal": 44210.0,
+    "vat": 5305.2,
+    "total": 49515.2,
+    "unreadable_fields": []
+  },
+  "meta": {
+    "model": "gemini-3.5-flash-lite",
+    "seconds": 3.79,
+    "input_tokens": 1638,
+    "output_tokens": 331,
+    "attempts": 1
+  }
+}

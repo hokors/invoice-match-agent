@@ -1,0 +1,55 @@
+{
+  "extraction": {
+    "supplier_name": "Batangas Coffee & Creamer Trading",
+    "supplier_tin": "252-019-737-00000",
+    "invoice_number": "BCC-24873",
+    "invoice_date": "2026-10-07",
+    "po_number": "P00077",
+    "currency": "PHP",
+    "lines": [
+      {
+        "supplier_code": "BCC-CM20-30",
+        "description": "Coffee Mix Original 20g x30",
+        "quantity": 24,
+        "unit": "pack",
+        "unit_price": 165.0,
+        "line_total": 3960.0
+      },
+      {
+        "supplier_code": "BCC-IC50-24",
+        "description": "Classic Instant Coffee 50g x24",
+        "quantity": 8,
+        "unit": "case",
+        "unit_price": 1440.0,
+        "line_total": 11520.0
+      },
+      {
+        "supplier_code": "BCC-CR170-24",
+        "description": "Creamer Powder 170g x24",
+        "quantity": 30,
+        "unit": "case",
+        "unit_price": 1104.0,
+        "line_total": 33120.0
+      },
+      {
+        "supplier_code": "BCC-CD30-30",
+        "description": "Choco Drink Mix 30g x30",
+        "quantity": 15,
+        "unit": "pack",
+        "unit_price": 240.0,
+        "line_total": 3600.0
+      }
+    ],
+    "subtotal": 52200.0,
+    "vat": 6264.0,
+    "total": 58464.0,
+    "unreadable_fields": []
+  },
+  "meta": {
+    "model": "gemini-3.5-flash-lite",
+    "seconds": 3.25,
+    "input_tokens": 1638,
+    "output_tokens": 525,
+    "attempts": 1
+  }
+}

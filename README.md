@@ -4,8 +4,20 @@ An AI accounts-payable agent that plugs into an **Odoo ERP**. It reads supplier 
 photos), finds the matching purchase order, checks the invoice against **what was ordered and what was actually
 received** (3-way match), explains every mismatch and creates a **draft vendor bill** for a person to approve.
 
-> Status: planning. Built against a self-hosted Odoo 19 Community instance with a fictional company and synthetic
-> invoices. No real company data.
+> Built against a self-hosted Odoo 19 Community instance with a fictional company and synthetic invoices.
+> No real company data.
+
+**Held-out result** (40 unseen invoices, scored once, no changes afterwards):
+
+| | |
+|---|---|
+| Problem invoices sent to review | **28/28 (100%)** |
+| Planted errors caught (all 8 types) | **32/32 (100%)** |
+| Flags that were real | 32/33 (97%) |
+| Correct final status | **39/40 (98%)** |
+| Median time per invoice | ~2.7 s |
+
+The one miss was a Google API timeout on a clean invoice, which the agent safely sent to a person.
 
 ## The problem
 
@@ -171,6 +183,24 @@ tune-026.jpg       needs_review  PO P00022  bill #12
 `--dry-run` shows the reports without writing; `--remove-drafts` deletes the agent's draft bills (the evaluation
 scripts refuse to run while vendor bills exist, so scores stay reproducible).
 
+## Held-out results (final)
+
+The 40 held-out invoices (separate POs, never looked at while building) were run once through the finished
+pipeline: [extraction report](docs/eval_runs/2026-11-15_1729_extract_holdout_holdout-final.md),
+[matching reports](docs/eval_runs/).
+
+| | Tuning set (60) | **Held-out set (40)** |
+|---|---|---|
+| Invoices read fully correctly | 95% | **98%** (39/40; the miss was an API timeout) |
+| Planted errors caught | 96% | **100%** (32/32) |
+| Flags that were real | 96% | **97%** (32/33) |
+| Problem invoices sent to review | 100% | **100%** (28/28) |
+| Clean invoices passed | 94% | **92%** (11/12) |
+| Correct final status | 98% | **98%** (39/40) |
+
+Both sets lose points only to API timeouts, and every one of those failed safe (sent to a person).
+40 invoices is a small set, so treat these as strong signals rather than precise rates.
+
 ## Milestones
 
 - [x] **Odoo sandbox:** Odoo 19 + Postgres in Docker, JSON-2 API, and Lakan Distribution's data: PH chart of accounts, PHP, 12% VAT, 8 suppliers, 32 products, 30 POs (16 fully received, 8 partial with backorders, 6 not yet received)
@@ -178,7 +208,7 @@ scripts refuse to run while vendor bills exist, so scores stay reproducible).
 - [x] **Extraction:** invoice → JSON with Gemini, scored per field (tuning set: 95% of invoices fully correct)
 - [x] **Matching engine:** supplier, PO and line matching plus all checks in plain code (no LLM needed so far)
 - [x] **Write-back:** draft vendor bills in Odoo, linked to PO lines, with the invoice file, match report and a review To-Do
-- [ ] **Evaluation:** tuning and held-out runs
+- [x] **Evaluation:** tuning runs to improve; held-out run once at the end (98% correct status, 100% of problem invoices caught)
 - [ ] **Case study + demo**
 
 ## Stack
