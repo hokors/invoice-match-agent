@@ -75,7 +75,7 @@ improve on, a held-out set scored once.
 
 ## Milestones
 
-- [ ] **Odoo sandbox:** Odoo 19 + Postgres in Docker ✅, API access ✅; fictional company, suppliers, products, POs and receipts still to create (currently Odoo's demo data)
+- [x] **Odoo sandbox:** Odoo 19 + Postgres in Docker, JSON-2 API, and Lakan Distribution's data: PH chart of accounts, PHP, 12% VAT, 8 suppliers, 32 products, 30 POs (16 fully received, 8 partial with backorders, 6 not yet received)
 - [ ] **Invoice generator:** synthetic invoices with planted errors and answer keys
 - [ ] **Extraction:** invoice → JSON, scored per field
 - [ ] **Matching engine:** PO lookup, line matching, issue detection (rules + LLM only where needed)
@@ -109,10 +109,15 @@ docker compose up -d
 ```
 
 ```bash
-docker compose run --rm odoo odoo -d lakan -i purchase,stock,account --with-demo --stop-after-init
+bash scripts/reset_sandbox.sh
 ```
 
-Odoo is then at http://localhost:8069 (database `lakan`). Create an API key under
-*Preferences → Account Security → New API Key* and put it in `.env` as `ODOO_API_KEY`.
+This **deletes and rebuilds** the `lakan` database as Lakan Distribution Inc.
+([`setup_company.py`](scripts/odoo/setup_company.py), [`seed_lakan.py`](scripts/odoo/seed_lakan.py)),
+and writes a fresh admin password and API key into `.env`. Odoo is then at http://localhost:8069.
+
+Each product has Lakan's own name and SKU (shown on POs) and the supplier's own name and code for it (what
+supplier invoices print), e.g. supplier `PBT-CL15-12` "Cola Litro 1.5L x12" is Lakan's `BEV-001`
+"Cola 1.5L (case of 12)". Matching those is part of the agent's job.
 The agent uses Odoo's JSON-2 API: `POST /json/2/<model>/<method>` with `Authorization: bearer <key>`
 and `X-Odoo-Database: lakan`.
