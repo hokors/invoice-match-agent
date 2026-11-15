@@ -144,13 +144,40 @@ Gemini's real extractions (tests the whole pipeline).
 All full-pipeline differences trace back to two API timeouts: unreadable invoices go to review (safe), and one
 duplicate was missed because its original was never read (see failure log #8).
 
+## Running the agent
+
+```bash
+python -m agent.run path/to/invoices/
+```
+
+For each invoice: extract with Gemini → 3-way match → create a **draft** vendor bill in Odoo
+([`agent/writeback.py`](agent/writeback.py)). Each bill has the supplier, invoice number, date and PO, one line per
+invoice line linked to its PO line (so Odoo's own "billed quantity" stays accurate), the original file attached,
+the match report in the notes and chatter, and a **"Review invoice issues"** To-Do when anything is off.
+Nothing is posted or paid.
+
+```text
+tune-001.jpg       ready         PO P00026  bill #7
+tune-007.jpg       needs_review  PO P00062  bill #8
+    - 'Coffee Mix Original 20g x30' is billed but isn't on P00062.
+tune-009.jpg       needs_review  PO P00047  bill #10
+    - Pancit Canton Chilimansi 60g (box of 72): billed 25, only 15 received.
+tune-016.jpg       needs_review  PO P00069  bill #11
+    - Iced Tea Lemon 1L (case of 12): billed ₱621.00/unit, PO price is ₱540.00.
+tune-026.jpg       needs_review  PO P00022  bill #12
+    - Bulacan Canned Goods Distributors invoice SI-2026-02124 was already received. Possible double payment.
+```
+
+`--dry-run` shows the reports without writing; `--remove-drafts` deletes the agent's draft bills (the evaluation
+scripts refuse to run while vendor bills exist, so scores stay reproducible).
+
 ## Milestones
 
 - [x] **Odoo sandbox:** Odoo 19 + Postgres in Docker, JSON-2 API, and Lakan Distribution's data: PH chart of accounts, PHP, 12% VAT, 8 suppliers, 32 products, 30 POs (16 fully received, 8 partial with backorders, 6 not yet received)
 - [x] **Invoice generator:** 60 tuning + 40 held-out invoices from real sandbox POs, 3 supplier layouts, clean PDF / scan / phone-photo versions, planted errors with answer keys
 - [x] **Extraction:** invoice → JSON with Gemini, scored per field (tuning set: 95% of invoices fully correct)
 - [x] **Matching engine:** supplier, PO and line matching plus all checks in plain code (no LLM needed so far)
-- [ ] **Write-back:** draft vendor bills in Odoo with the explanation attached
+- [x] **Write-back:** draft vendor bills in Odoo, linked to PO lines, with the invoice file, match report and a review To-Do
 - [ ] **Evaluation:** tuning and held-out runs
 - [ ] **Case study + demo**
 

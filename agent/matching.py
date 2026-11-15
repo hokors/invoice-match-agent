@@ -205,16 +205,18 @@ class Matcher:
         issues += po_issues
         if po is None:
             issues.append({"type": "no_po_found", "message": f"No open PO from {sup.name} matches these items."})
-            return {"status": "needs_review", "supplier": sup.name, "po": None, "issues": issues}
+            return {"status": "needs_review", "supplier": sup.name, "supplier_id": sup.id, "po": None, "issues": issues}
 
         issues += self.check_lines(po, matched)
         issues += self.check_math(inv, matched)
         issues += self.check_date(po, inv)
         lines = [{"description": l.get("description"), "sku": p.sku if p else None,
+                  "product_id": p.product_id if p else None,
+                  "po_line_id": po.lines[p.product_id].id if p and p.product_id in po.lines else None,
                   "billed_qty": l.get("quantity"), "billed_price": l.get("unit_price"),
                   "po_qty": po.lines[p.product_id].qty_ordered if p and p.product_id in po.lines else None,
                   "received_qty": po.lines[p.product_id].qty_received if p and p.product_id in po.lines else None,
                   "po_price": po.lines[p.product_id].price if p and p.product_id in po.lines else None}
                  for l, p in matched]
-        return {"status": "needs_review" if issues else "ready", "supplier": sup.name, "po": po.name,
-                "issues": issues, "lines": lines}
+        return {"status": "needs_review" if issues else "ready", "supplier": sup.name, "supplier_id": sup.id,
+                "po": po.name, "po_id": po.id, "issues": issues, "lines": lines}

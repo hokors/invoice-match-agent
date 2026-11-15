@@ -27,6 +27,7 @@ class SupplierProduct:
 
 @dataclass
 class PoLine:
+    id: int
     product_id: int
     sku: str
     qty_ordered: float
@@ -63,10 +64,13 @@ class OdooContext:
         self.suppliers: dict[int, Supplier] = {}
         self.pos_by_name: dict[str, PurchaseOrder] = {}
         self.billed_refs: set[tuple[int, str]] = set()  # (supplier id, normalized invoice number) already in Odoo
+        self.purchase_tax_id: int | None = None
         self.load()
 
     def load(self):
         o = self.odoo
+        company = o.search_read("res.company", [], ["account_purchase_tax_id"], limit=1)[0]
+        self.purchase_tax_id = company["account_purchase_tax_id"][0] if company["account_purchase_tax_id"] else None
         for p in o.search_read("res.partner", [["supplier_rank", ">", 0]], ["name", "vat"]):
             self.suppliers[p["id"]] = Supplier(p["id"], p["name"], digits(p["vat"]))
 
@@ -91,7 +95,7 @@ class OdooContext:
                                ["order_id", "product_id", "product_qty", "qty_received", "qty_invoiced", "price_unit"]):
             po = by_id[l["order_id"][0]]
             pid = l["product_id"][0]
-            po.lines[pid] = PoLine(pid, sku_of.get(pid, ""), l["product_qty"], l["qty_received"], l["qty_invoiced"], l["price_unit"])
+            po.lines[pid] = PoLine(l["id"], pid, sku_of.get(pid, ""), l["product_qty"], l["qty_received"], l["qty_invoiced"], l["price_unit"])
 
         for b in o.search_read("account.move", [["move_type", "=", "in_invoice"], ["state", "!=", "cancel"]], ["partner_id", "ref"]):
             if b["partner_id"] and b["ref"]:

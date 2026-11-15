@@ -13,3 +13,4 @@ pg-data/
 
 # Generated invoices (rebuild with python -m generator.generate)
 data/invoices/
+data/demo_inbox/

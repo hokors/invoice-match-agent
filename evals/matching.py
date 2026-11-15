@@ -44,7 +44,12 @@ def main():
 
     set_dir = ROOT / "data" / "invoices" / args.set
     manifest = json.loads((set_dir / "manifest.json").read_text(encoding="utf-8"))
-    matcher = Matcher(OdooContext(Odoo.from_env()))
+    odoo = Odoo.from_env()
+    existing = odoo.call("account.move", "search_count", domain=[["move_type", "=", "in_invoice"]])
+    if existing:
+        raise SystemExit(f"Odoo has {existing} vendor bill(s); they would change duplicate and billed-quantity checks.\n"
+                         "Run `python -m agent.run --remove-drafts` first for a reproducible score.")
+    matcher = Matcher(OdooContext(odoo))
 
     planted_by_type, found_by_type = Counter(), Counter()
     tp = fp = warnings = 0
