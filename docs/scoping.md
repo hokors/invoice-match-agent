@@ -64,4 +64,4 @@ Cut the time per invoice and catch more billing errors, **without** letting soft
 | Poor scans or photos misread | Confidence per field; low confidence → needs review |
 | Same product named differently by supplier and PO | Fuzzy matching with a supplier product-code table, LLM as fallback |
 | Partial deliveries across several receipts | Match against the sum of receipts per PO line |
-| Synthetic invoices too clean to be realistic | Vary layouts, add scan noise, handwriting, multi-page invoices |
+| Synthetic invoices too clean to be realistic | Done: 3 layouts, office-scan and phone-photo versions. Not done: handwriting, stamps, multi-page invoices |
