@@ -1,0 +1,61 @@
+invoice_id,render,scenario,expected,got,true_po,matched_po,missed,extra,messages
+tune-001,scan,clean,ready,ready,P00026,P00026,,,
+tune-002,scan,math_error,needs_review,needs_review,P00082,P00082,,,"Subtotal + VAT = ₱152,633.60, invoice total says ₱153,133.60."
+tune-003,scan,clean,ready,ready,P00080,P00080,,,
+tune-004,pdf,clean,ready,ready,P00059,P00059,,,
+tune-005,pdf,missing_po_ref,needs_review,needs_review,P00013,P00013,,,No PO reference on the invoice. Best match by items and quantities: P00013.
+tune-006,photo,clean,ready,ready,P00032,P00032,,,
+tune-007,photo,unknown_item,needs_review,needs_review,P00062,P00062,,,'Coffee Mix Original 20g x30' is billed but isn't on P00062.
+tune-008,photo,not_received,needs_review,needs_review,P00022,,not_received,extraction_failed,The invoice couldn't be read. A person needs to enter it.
+tune-009,scan,over_billed_qty,needs_review,needs_review,P00047,P00047,,,"Pancit Canton Chilimansi 60g (box of 72): billed 25, only 15 received."
+tune-010,scan,over_billed_qty,needs_review,needs_review,P00086,P00086,,,"Well-milled Rice 25kg (sack): billed 30, only 24 received."
+tune-011,pdf,wrong_po_ref,needs_review,needs_review,P00091,P00091,,,"Invoice cites PO P00072, but its items and quantities match P00091."
+tune-012,scan,over_billed_qty,needs_review,needs_review,P00103,P00103,,,"Brown Sugar 1kg (bale of 20): billed 25, only 12 received."
+tune-013,photo,combo:price_mismatch+unknown_item,needs_review,needs_review,P00034,P00034,,,"Powder Detergent 66g (pack of 72): billed ₱777.60/unit, PO price is ₱648.00. | 'Dishwash Liquid 250ml x24' is billed but isn't on P00034."
+tune-014,pdf,clean,ready,ready,P00046,P00046,,,
+tune-015,pdf,combo:unknown_item+price_mismatch,needs_review,needs_review,P00097,P00097,,,"Chocolate Drink 30g (pack of 30): billed ₱276.00/unit, PO price is ₱240.00. | 'Classic Instant Coffee 50g x24' is billed but isn't on P00097."
+tune-016,photo,price_mismatch,needs_review,needs_review,P00069,P00069,,,"Iced Tea Lemon 1L (case of 12): billed ₱621.00/unit, PO price is ₱540.00."
+tune-017,pdf,not_received,needs_review,needs_review,P00008,P00008,,,Nothing on P00008 has been received yet; don't pay before the goods arrive.
+tune-018,pdf,price_mismatch,needs_review,needs_review,P00031,P00031,,,"Chicharon Spicy 50g (case of 24): billed ₱630.00/unit, PO price is ₱600.00."
+tune-019,scan,clean,ready,ready,P00018,P00018,,,
+tune-020,scan,over_billed_qty,needs_review,needs_review,P00073,P00073,,,"Premium Jasmine Rice 25kg (sack): billed 25, only 22 received."
+tune-021,pdf,not_received,needs_review,needs_review,P00063,P00063,,,Nothing on P00063 has been received yet; don't pay before the goods arrive.
+tune-022,pdf,not_received,needs_review,needs_review,P00029,P00029,,,Nothing on P00029 has been received yet; don't pay before the goods arrive.
+tune-023,scan,clean,ready,ready,P00051,P00051,,,
+tune-024,pdf,combo:missing_po_ref+price_mismatch,needs_review,needs_review,P00057,P00057,,,"No PO reference on the invoice. Best match by items and quantities: P00057. | Bath Soap 90g (box of 72): billed ₱2,152.80/unit, PO price is ₱1,872.00."
+tune-025,scan,wrong_po_ref,needs_review,needs_review,P00052,P00052,,,"Invoice cites PO P00027, but its items and quantities match P00052. | Invoice date 2026-05-09 is before the PO date 2026-08-30; check it was read correctly."
+tune-026,scan,duplicate_invoice,needs_review,needs_review,P00022,P00022,duplicate_invoice,,Nothing on P00022 has been received yet; don't pay before the goods arrive.
+tune-027,photo,clean,ready,ready,P00112,P00112,,,
+tune-028,pdf,clean,ready,ready,P00108,P00108,,,
+tune-029,pdf,missing_po_ref,needs_review,needs_review,P00017,P00017,,,No PO reference on the invoice. Best match by items and quantities: P00017.
+tune-030,photo,missing_po_ref,needs_review,needs_review,P00093,P00093,,,No PO reference on the invoice. Best match by items and quantities: P00093.
+tune-031,pdf,combo:over_billed_qty+price_mismatch,needs_review,needs_review,P00040,P00040,,,"Tuna Flakes in Oil 180g (case of 48): billed 27, only 25 received. | Tuna Flakes in Oil 180g (case of 48): billed ₱1,848.00/unit, PO price is ₱1,680.00."
+tune-032,scan,clean,ready,ready,P00090,P00090,,,
+tune-033,pdf,math_error,needs_review,needs_review,P00030,P00030,,,"12% VAT on ₱64,025.00 is ₱7,683.00, invoice says ₱9,603.75."
+tune-034,scan,clean,ready,needs_review,P00113,,,extraction_failed,The invoice couldn't be read. A person needs to enter it.
+tune-035,scan,price_mismatch,needs_review,needs_review,P00043,P00043,,,"Corned Beef 150g (case of 48): billed ₱2,112.00/unit, PO price is ₱1,920.00."
+tune-036,pdf,clean,ready,ready,P00003,P00003,,,
+tune-037,pdf,price_mismatch,needs_review,needs_review,P00033,P00033,,,"Condensed Milk 300ml (case of 48): billed ₱2,534.40/unit, PO price is ₱2,304.00."
+tune-038,pdf,unknown_item,needs_review,needs_review,P00102,P00102,,,'Sweetened Condensed 300ml x48' is billed but isn't on P00102.
+tune-039,scan,over_billed_qty,needs_review,needs_review,P00111,P00111,,,"Cola 1.5L (case of 12): billed 50, only 40 received."
+tune-040,scan,duplicate_invoice,needs_review,needs_review,P00057,P00057,,,"Tarlac Household Care Supply invoice 003273 was already received. Possible double payment. | No PO reference on the invoice. Best match by items and quantities: P00057. | Bath Soap 90g (box of 72): billed ₱2,152.80/unit, PO price is ₱1,872.00."
+tune-041,photo,clean,ready,ready,P00005,P00005,,,
+tune-042,pdf,clean,ready,ready,P00104,P00104,,,
+tune-043,pdf,clean,ready,ready,P00094,P00094,,,
+tune-044,scan,clean,ready,ready,P00020,P00020,,,
+tune-045,scan,combo:over_billed_qty+price_mismatch,needs_review,needs_review,P00070,P00070,,,"Meat Loaf 150g (case of 48): billed 40, only 30 received. | Meat Loaf 150g (case of 48): billed ₱1,600.80/unit, PO price is ₱1,392.00."
+tune-046,pdf,unknown_item,needs_review,needs_review,P00058,P00058,,,'Potato Crisps Orig 60g x24' is billed but isn't on P00058.
+tune-047,scan,math_error,needs_review,needs_review,P00071,P00071,,,"12% VAT on ₱94,080.00 is ₱11,289.60, invoice says ₱14,112.00."
+tune-048,pdf,clean,ready,ready,P00072,P00072,,,
+tune-049,scan,over_billed_qty,needs_review,needs_review,P00078,P00078,,,"Premium Jasmine Rice 25kg (sack): billed 20, only 10 received."
+tune-050,scan,unknown_item,needs_review,needs_review,P00001,P00001,,,'Detergent Powder 66g x72' is billed but isn't on P00001.
+tune-051,pdf,price_mismatch,needs_review,needs_review,P00055,P00055,,,"3-in-1 Coffee Original 20g (pack of 30): billed ₱173.25/unit, PO price is ₱165.00."
+tune-052,pdf,clean,ready,ready,P00076,P00076,,,
+tune-053,pdf,price_mismatch,needs_review,needs_review,P00004,P00004,,,"Fabric Conditioner 22ml (pack of 72): billed ₱453.60/unit, PO price is ₱432.00."
+tune-054,pdf,unknown_item,needs_review,needs_review,P00068,P00068,,,'Canton Chilimansi 60g x72' is billed but isn't on P00068.
+tune-055,scan,wrong_po_ref,needs_review,needs_review,P00048,P00048,,,"Invoice cites PO P00094, but its items and quantities match P00048."
+tune-056,scan,over_billed_qty,needs_review,needs_review,P00079,P00079,,,"Instant Mami Chicken 55g (box of 72): billed 30, only 25 received."
+tune-057,photo,duplicate_invoice,needs_review,needs_review,P00076,P00076,,,Malolos Rice & Grains Co. invoice INV/2026/2577 was already received. Possible double payment.
+tune-058,pdf,math_error,needs_review,needs_review,P00074,P00074,,,"Line 'Corn Snack BBQ 100g x24': 20 × ₱840.00 = ₱16,800.00, invoice says ₱17,050.00."
+tune-059,photo,math_error,needs_review,needs_review,P00120,P00120,,,"Line 'Sotanghon 100g x50': 10 × ₱1,250.00 = ₱12,500.00, invoice says ₱6,250.00."
+tune-060,pdf,price_mismatch,needs_review,needs_review,P00095,P00095,,,"3-in-1 Coffee Original 20g (pack of 30): billed ₱189.75/unit, PO price is ₱165.00."

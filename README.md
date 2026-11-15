@@ -121,12 +121,35 @@ Nine of the ten v1 misses were the same bug: dates printed as MM/DD/YYYY read as
 misses are API timeouts, not reading mistakes. Details in [`docs/eval_runs/`](docs/eval_runs/) and
 [`docs/failure_log.md`](docs/failure_log.md). The held-out set is kept untouched for the final end-to-end score.
 
+## Matching results (tuning set)
+
+[`agent/matching.py`](agent/matching.py) identifies the supplier (TIN, then name), matches each invoice line to a
+product (supplier code, then fuzzy name), picks the PO (the printed reference unless another PO fits exactly),
+and runs every check in code: over-billing vs. received quantities, prices vs. the PO, unknown items, math and
+VAT, duplicates, deliveries not yet received, and invoice dates that don't fit the PO.
+Every flag comes with a plain-language explanation.
+
+Scored with [`evals/matching.py`](evals/matching.py) in two modes: perfect extraction (tests the logic alone) and
+Gemini's real extractions (tests the whole pipeline).
+
+| | Perfect extraction | **Real extraction (full pipeline)** |
+|---|---|---|
+| Planted errors caught | 50/50 (100%) | **48/50 (96%)** |
+| Flags that were real | 50/50 (100%) | 48/50 (96%) |
+| Problem invoices sent to review | 42/42 (100%) | **42/42 (100%)** |
+| Clean invoices passed | 18/18 (100%) | 17/18 (94%) |
+| Correct PO | 60/60 (100%) | 58/60 (97%) |
+| Correct final status | 60/60 (100%) | **59/60 (98%)** |
+
+All full-pipeline differences trace back to two API timeouts: unreadable invoices go to review (safe), and one
+duplicate was missed because its original was never read (see failure log #8).
+
 ## Milestones
 
 - [x] **Odoo sandbox:** Odoo 19 + Postgres in Docker, JSON-2 API, and Lakan Distribution's data: PH chart of accounts, PHP, 12% VAT, 8 suppliers, 32 products, 30 POs (16 fully received, 8 partial with backorders, 6 not yet received)
 - [x] **Invoice generator:** 60 tuning + 40 held-out invoices from real sandbox POs, 3 supplier layouts, clean PDF / scan / phone-photo versions, planted errors with answer keys
 - [x] **Extraction:** invoice → JSON with Gemini, scored per field (tuning set: 95% of invoices fully correct)
-- [ ] **Matching engine:** PO lookup, line matching, issue detection (rules + LLM only where needed)
+- [x] **Matching engine:** supplier, PO and line matching plus all checks in plain code (no LLM needed so far)
 - [ ] **Write-back:** draft vendor bills in Odoo with the explanation attached
 - [ ] **Evaluation:** tuning and held-out runs
 - [ ] **Case study + demo**
