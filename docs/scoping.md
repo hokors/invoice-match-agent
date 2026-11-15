@@ -53,7 +53,7 @@ Cut the time per invoice and catch more billing errors, **without** letting soft
 
 ## Assumptions
 
-- Self-hosted Odoo 19 Community exposes the external API (to be verified first).
+- Self-hosted Odoo 19 Community exposes the external JSON-2 API (verified 2026-11-15).
 - Every invoice should have a PO. Invoices without one are flagged, not processed.
 - Supplier invoice numbers are unique per supplier.
 

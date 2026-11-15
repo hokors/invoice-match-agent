@@ -75,7 +75,7 @@ improve on, a held-out set scored once.
 
 ## Milestones
 
-- [ ] **Odoo sandbox:** Odoo 19 + Postgres in Docker, fictional company, suppliers, products, POs and receipts
+- [ ] **Odoo sandbox:** Odoo 19 + Postgres in Docker ✅, API access ✅; fictional company, suppliers, products, POs and receipts still to create (currently Odoo's demo data)
 - [ ] **Invoice generator:** synthetic invoices with planted errors and answer keys
 - [ ] **Extraction:** invoice → JSON, scored per field
 - [ ] **Matching engine:** PO lookup, line matching, issue detection (rules + LLM only where needed)
@@ -87,9 +87,32 @@ improve on, a held-out set scored once.
 
 | Part | Plan |
 |---|---|
-| ERP | Odoo 19 Community, self-hosted with Docker (to be checked: external API access on self-hosted Community) |
+| ERP | Odoo 19 Community, self-hosted with Docker ([`compose.yaml`](compose.yaml)). JSON-2 external API verified working on self-hosted Community. |
 | Extraction | Gemini with a JSON response schema ([`schema/invoice.schema.json`](schema/invoice.schema.json)) |
 | Agent | Python, talking to Odoo's external API |
 | Matching | Deterministic rules for money and quantities; LLM only for fuzzy product-name matching and explanations |
 
 See [`docs/scoping.md`](docs/scoping.md) for scope, assumptions and risks, written as if for a client.
+
+## Run the Odoo sandbox
+
+Needs Docker Desktop.
+
+```bash
+cp .env.example .env
+```
+
+Set `PG_PASSWORD` in `.env`, then:
+
+```bash
+docker compose up -d
+```
+
+```bash
+docker compose run --rm odoo odoo -d lakan -i purchase,stock,account --with-demo --stop-after-init
+```
+
+Odoo is then at http://localhost:8069 (database `lakan`). Create an API key under
+*Preferences → Account Security → New API Key* and put it in `.env` as `ODOO_API_KEY`.
+The agent uses Odoo's JSON-2 API: `POST /json/2/<model>/<method>` with `Authorization: bearer <key>`
+and `X-Odoo-Database: lakan`.
