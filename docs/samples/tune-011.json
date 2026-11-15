@@ -1,0 +1,49 @@
+{
+  "invoice_id": "tune-011",
+  "order": 11,
+  "file": "tune-011.pdf",
+  "render": "pdf",
+  "layout": "classic",
+  "scenario": "wrong_po_ref",
+  "true_po": "P00091",
+  "expected_status": "needs_review",
+  "issues": [
+    {
+      "type": "wrong_po_ref",
+      "printed": "P00072",
+      "actual": "P00091"
+    }
+  ],
+  "printed": {
+    "supplier_name": "Pangasinan Snacks Corp.",
+    "supplier_tin": "266-845-210-00000",
+    "invoice_number": "SI-2026-03718",
+    "invoice_date": "2026-09-29",
+    "po_number": "P00072",
+    "lines": [
+      {
+        "supplier_code": "PSC-PC60-24",
+        "description": "Potato Crisps Orig 60g x24",
+        "quantity": 20.0,
+        "unit": "case",
+        "unit_price": 696.0,
+        "line_total": 13920.0
+      },
+      {
+        "supplier_code": "PSC-CC30-50",
+        "description": "Cheese Crackers 30g x50",
+        "quantity": 25.0,
+        "unit": "pack",
+        "unit_price": 350.0,
+        "line_total": 8750.0
+      }
+    ],
+    "subtotal": 22670.0,
+    "vat": 2720.4,
+    "total": 25390.4
+  },
+  "line_skus": [
+    "SNK-001",
+    "SNK-003"
+  ]
+}

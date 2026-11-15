@@ -103,16 +103,16 @@ for sup_i, name, sku, sup_name, sup_code, price in PRODUCTS:
     products.append((sup_i, tmpl.product_variant_id, price))
 
 # --- Purchase orders + goods receipts ----------------------------------------
-# 30 POs over the last ~60 days. Receipt outcome per PO:
+# 120 POs over the last ~90 days, so test sets can invoice each PO at most once. Receipt outcome per PO:
 #   full (60%), partial with backorder (25%), not yet received (15%)
 today = datetime.now().replace(hour=9, minute=0, second=0, microsecond=0)
 outcomes = {"full": 0, "partial": 0, "not_received": 0}
 
-for n in range(30):
+for n in range(120):
     sup_i = rng.randrange(len(SUPPLIERS))
     sup_products = [p for p in products if p[0] == sup_i]
     picked = rng.sample(sup_products, k=rng.randint(2, len(sup_products)))
-    order_date = today - timedelta(days=rng.randint(5, 60))
+    order_date = today - timedelta(days=rng.randint(5, 90))
 
     po = env["purchase.order"].create({
         "partner_id": partners[sup_i].id,

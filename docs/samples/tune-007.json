@@ -1,0 +1,67 @@
+{
+  "invoice_id": "tune-007",
+  "order": 7,
+  "file": "tune-007.jpg",
+  "render": "photo",
+  "layout": "statement",
+  "scenario": "unknown_item",
+  "true_po": "P00062",
+  "expected_status": "needs_review",
+  "issues": [
+    {
+      "type": "unknown_item",
+      "description": "Coffee Mix Original 20g x30",
+      "sku": "COF-001"
+    }
+  ],
+  "printed": {
+    "supplier_name": "Batangas Coffee & Creamer Trading",
+    "supplier_tin": "252-019-737-00000",
+    "invoice_number": "BCC-3371",
+    "invoice_date": "2026-08-24",
+    "po_number": "P00062",
+    "lines": [
+      {
+        "supplier_code": "BCC-IC50-24",
+        "description": "Classic Instant Coffee 50g x24",
+        "quantity": 30.0,
+        "unit": "case",
+        "unit_price": 1440.0,
+        "line_total": 43200.0
+      },
+      {
+        "supplier_code": "BCC-CR170-24",
+        "description": "Creamer Powder 170g x24",
+        "quantity": 20.0,
+        "unit": "case",
+        "unit_price": 1104.0,
+        "line_total": 22080.0
+      },
+      {
+        "supplier_code": "BCC-CD30-30",
+        "description": "Choco Drink Mix 30g x30",
+        "quantity": 20.0,
+        "unit": "pack",
+        "unit_price": 240.0,
+        "line_total": 4800.0
+      },
+      {
+        "supplier_code": "BCC-CM20-30",
+        "description": "Coffee Mix Original 20g x30",
+        "quantity": 2,
+        "unit": "pack",
+        "unit_price": 165.0,
+        "line_total": 330.0
+      }
+    ],
+    "subtotal": 70410.0,
+    "vat": 8449.2,
+    "total": 78859.2
+  },
+  "line_skus": [
+    "COF-002",
+    "COF-003",
+    "COF-004",
+    "COF-001"
+  ]
+}

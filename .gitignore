@@ -10,3 +10,6 @@ node_modules/
 odoo-data/
 pg-data/
 *.dump
+
+# Generated invoices (rebuild with python -m generator.generate)
+data/invoices/

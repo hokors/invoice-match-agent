@@ -73,10 +73,43 @@ Synthetic invoices generated from the Odoo POs, with **planted errors** from the
 Same approach as [inquiry-triage-automation](https://github.com/hokors/inquiry-triage-automation): a tuning set to
 improve on, a held-out set scored once.
 
+## Test invoices
+
+[`generator/`](generator/) builds supplier invoices from Lakan's actual POs and goods receipts in Odoo, plants
+errors, and writes an answer key for each one.
+
+| | Tuning set | Held-out set |
+|---|---|---|
+| Invoices | 60 | 40 |
+| Correct (should pass) | 18 | 12 |
+| With planted errors | 42 | 28 |
+| Shared POs | none | none |
+
+- **Errors planted:** over-billed quantity, price mismatch, unknown item, missing PO reference, wrong PO reference,
+  math/VAT error, invoice before delivery, duplicate invoice, and two-error combinations. Each type has a fixed quota,
+  so even rare types get several examples.
+- **Three supplier layouts** (each supplier always uses the same one): item codes in their own column, in the
+  description, or not printed at all; different labels for the PO reference and totals; three date formats.
+- **Three forms:** clean PDF, office scan (grayscale, skew, toner noise, scanner streak), and phone photo
+  (perspective, warm light, shadow, blur).
+
+Samples with their answer keys: [`docs/samples/`](docs/samples/).
+
+```bash
+python -m generator.generate --set tune --count 60
+```
+
+```bash
+python -m generator.generate --set holdout --count 40
+```
+
+Needs the sandbox running and `pip install -r requirements.txt`. Output goes to `data/invoices/` (not committed;
+the same seeds always rebuild the same invoices from the same sandbox).
+
 ## Milestones
 
 - [x] **Odoo sandbox:** Odoo 19 + Postgres in Docker, JSON-2 API, and Lakan Distribution's data: PH chart of accounts, PHP, 12% VAT, 8 suppliers, 32 products, 30 POs (16 fully received, 8 partial with backorders, 6 not yet received)
-- [ ] **Invoice generator:** synthetic invoices with planted errors and answer keys
+- [x] **Invoice generator:** 60 tuning + 40 held-out invoices from real sandbox POs, 3 supplier layouts, clean PDF / scan / phone-photo versions, planted errors with answer keys
 - [ ] **Extraction:** invoice → JSON, scored per field
 - [ ] **Matching engine:** PO lookup, line matching, issue detection (rules + LLM only where needed)
 - [ ] **Write-back:** draft vendor bills in Odoo with the explanation attached
