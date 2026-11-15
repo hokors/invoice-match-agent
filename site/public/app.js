@@ -102,10 +102,10 @@
     const median = secs[Math.floor(secs.length / 2)];
     $("heroValue").textContent = `${held.review[0]} / ${held.review[1]}`;
     const tiles = [
-      ["Planted errors caught", `${held.recall[0]} / ${held.recall[1]}`, "all 8 error types"],
-      ["Correct final routing", `${pct(...held.status)}%`, `${held.status[0]} of ${held.status[1]}; the miss was an API timeout`],
-      ["Median time per invoice", `${median.toFixed(1)} s`, "read, matched and filed"],
-      ["Money decisions made by AI alone", "0", "every check is plain code"],
+      ["Errors caught", `${held.recall[0]} / ${held.recall[1]}`, "8 error types"],
+      ["Correct routing", `${pct(...held.status)}%`, `${held.status[0]} / ${held.status[1]}`],
+      ["Median runtime", `${median.toFixed(1)} s`, "per invoice"],
+      ["Auto-payments", "0", "human approval"],
     ];
     $("tiles").replaceChildren(...tiles.map(([l, v, n]) =>
       h("div", { class: "tile" }, [h("div", { class: "label", text: l }), h("div", { class: "value", text: v }), h("div", { class: "note", text: n })])));
@@ -146,7 +146,7 @@
     table($("tableReading"), ["Form", ...runs.map((r) => r.label)],
       cats.map(([k, n]) => [n, ...runs.map((r) => `${pct(...r[k])}% (${r[k][0]}/${r[k][1]})`)]));
     const v1 = runs[0].All, v2 = runs[1].All;
-    $("calloutReading").textContent = `Prompt v1 read 10/03/2026 (October 3) as March 10 on 9 invoices. One rule about Philippine dates took it from ${pct(...v1)}% to ${pct(...v2)}%.`;
+    $("calloutReading").textContent = `Date rule: ${pct(...v1)}% → ${pct(...v2)}% field-perfect reads.`;
   }
 
   // ---------- chart 2: matching (dot plot) ----------
@@ -318,24 +318,8 @@
     $("dlg").showModal();
   }
 
-  function renderFixes() {
-    const ex = DATA.extraction, first = DATA.matching[0], fixed = DATA.matching[1];
-    const items = [
-      [`${pct(...ex[0].All)}% → ${pct(...ex[1].All)}%`, "invoices read fully correctly", "Day and month swapped",
-        "Philippine invoices print 10/03/2026 for October 3; the model read March 10 on 9 of 60 invoices. One prompt rule fixed 8 of them, and a code check now flags any invoice dated before its own PO."],
-      [`${first.types.unknown_item[0]}/${first.types.unknown_item[1]} → ${fixed.types.unknown_item[0]}/${fixed.types.unknown_item[1]}`, "unknown items caught",
-        "False “wrong PO” accusations", `An extra item made the cited PO look like a bad fit, so the matcher picked another PO and invented over-billing. Rule: trust the printed PO unless another fits exactly. Flags that were real: ${pct(...first.metrics.precision)}% → ${pct(...fixed.metrics.precision)}%.`],
-      ["Flash → Flash-Lite", "main model", "The main model went down",
-        "Gemini Flash kept returning “high demand” and timing out. Flash-Lite answered in about 2–3 s with the accuracy above, so it became the main model with Flash as fallback. Timeouts still happen; every one goes to a person."],
-      ["Recorded", "every invoice, even unreadable", "A duplicate slipped through",
-        "Its original timed out, so no invoice number was on record. Every invoice now becomes a draft bill with the file attached and an “Enter manually” To-Do. Still open: duplicates of an unreadable original."],
-    ];
-    $("fixes").replaceChildren(...items.map(([d, ds, t, p]) =>
-      h("div", { class: "fix" }, [h("div", { class: "delta" }, [d, h("small", { text: ds })]), h("div", {}, [h("h3", { text: t }), h("p", { text: p })])])));
-  }
-
   function renderFiltered() { renderTypes(); renderLatency(); renderGrid(); }
-  function renderAll() { renderHero(); renderReading(); renderMatching(); renderFiltered(); renderFixes(); }
+  function renderAll() { renderHero(); renderReading(); renderMatching(); renderFiltered(); }
 
   // ---------- controls ----------
   function wire() {
@@ -389,5 +373,5 @@
   }
 
   fetch("data.json").then((r) => r.json()).then((d) => { DATA = d; wire(); renderAll(); })
-    .catch(() => { document.querySelector(".hero .lede").textContent = "Couldn't load the results data."; });
+    .catch(() => { document.querySelector(".hero .lede").textContent = "Results data unavailable."; });
 })();
